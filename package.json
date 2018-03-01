@@ -1,0 +1,45 @@
+{
+  "name": "bot-annah",
+  "version": "0.2.1",
+  "description": "bot-annah a companion bot to help you suck less at LoL",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "bufferutil": "^3.0.3",
+    "discord.js": "^11.3.0",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.7",
+    "morgan": "^1.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
+    "socket.io": "^2.0.4",
+    "uws": "^9.14.0",
+    "rxjs": "^5.5.6",
+    "node-cache": "^4.1.1",
+    "eris": "^0.8.4"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "9"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "bots",
+    "chatbots",
+    "web chat"
+  ],
+  "author": "@bbaaxx",
+  "license": "GPL-3.0"
+}
