@@ -1,0 +1,2649 @@
+{
+  "{\"filename\":\"/app/app.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "./bot",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "wakeUpBot"
+              }
+            ]
+          },
+          {
+            "source": "./servers",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "getServers"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/app.js",
+      "filenameRelative": "/app/app.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "app.js",
+      "sourceFileName": "app.js",
+      "sourceRoot": "/app",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "app"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _bot = require('./bot');\n\nvar _bot2 = _interopRequireDefault(_bot);\n\nvar _servers = require('./servers');\n\nvar _servers2 = _interopRequireDefault(_servers);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _servers2.default)().then(_bot2.default);\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qcyJdLCJuYW1lcyI6WyJ0aGVuIl0sIm1hcHBpbmdzIjoiOztBQUFBOzs7O0FBQ0E7Ozs7OztBQUVBLHlCQUNHQSxJQURIIiwiZmlsZSI6ImFwcC5qcyIsInNvdXJjZVJvb3QiOiIvYXBwIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHdha2VVcEJvdCBmcm9tICcuL2JvdCc7XG5pbXBvcnQgZ2V0U2VydmVycyBmcm9tICcuL3NlcnZlcnMnO1xuXG5nZXRTZXJ2ZXJzKClcbiAgLnRoZW4od2FrZVVwQm90KTsiXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "app.js"
+      ],
+      "names": [
+        "then"
+      ],
+      "mappings": ";;AAAA;;;;AACA;;;;;;AAEA,yBACGA,IADH",
+      "file": "app.js",
+      "sourceRoot": "/app",
+      "sourcesContent": [
+        "import wakeUpBot from './bot';\nimport getServers from './servers';\n\ngetServers()\n  .then(wakeUpBot);"
+      ]
+    },
+    "mtime": 1519924271816
+  },
+  "{\"filename\":\"/app/bot/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "./adapters/discordJs",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "getDiscordAdapter"
+              }
+            ]
+          },
+          {
+            "source": "./messageActionBroker",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "messageActionBroker"
+              }
+            ]
+          },
+          {
+            "source": "./skills/conversation",
+            "imported": [
+              "conversationToContext"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "conversationToContext",
+                "local": "conversationToContext"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/index.js",
+      "filenameRelative": "/app/bot/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/bot",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _discordJs = require('./adapters/discordJs');\n\nvar _discordJs2 = _interopRequireDefault(_discordJs);\n\nvar _messageActionBroker = require('./messageActionBroker');\n\nvar _messageActionBroker2 = _interopRequireDefault(_messageActionBroker);\n\nvar _conversation = require('./skills/conversation');\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// TODO: Move this to app.js\n// Y un handler de nuestro bot, este handler es como una oreja o \n// el buzon para nuestro bot porque es alli en donde va a recibir los mensajes.\nconst game = {\n  name: 'with your mind',\n  type: 'PLAYING'\n};\n\n// Creamos una funcion para que nos avise en la consola cuando\n// nuestro bot se haya conectado a Discord\n// importamos un adaptador para conectarnos a Discord\nconst readyHandler = client => () => {\n  client.user.setPresence({ game });\n  console.log(`Logged in as ${client.user.tag || client.user.discriminator} !`);\n};\n\nconst wrapMessageToContext = services => message => ({\n  startedAt: new Date(),\n  message,\n  services\n});\n\n// Esta es la funcion que vamos a exportar para despertar al bot\n\nexports.default = async servers => {\n  const { ws, wss, db } = await servers;\n\n  const discordAdapter = (0, _discordJs2.default)();\n\n  const { messages$, replies$, actions$ } = discordAdapter;\n\n  const services = { pa: { discord: discordAdapter }, ws, wss, db };\n\n  // Registramos el handler que creamos antes para que nos avise\n  // en la consola cuando el bot se haya conectado a Discord\n  discordAdapter.whenWeGetOnline(readyHandler);\n\n  // Registramos un handler de nuestro bot para que escuche\n  // los mensajes del adaptador de Discord\n  messages$.map(wrapMessageToContext(services)) // Crea un contexto\n  .map(_conversation.conversationToContext) // Agrega la conversacion (si es que hay una)\n  .map(_messageActionBroker2.default) // Usa los skills del bot para manejar el mensaje\n  .subscribe(replies$); // deposita el resultado en replies$\n\n  // Finalmente le pedimos al adaptador de Discord que se conecte.\n  discordAdapter.connect();\n\n  return services;\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImdhbWUiLCJuYW1lIiwidHlwZSIsInJlYWR5SGFuZGxlciIsImNsaWVudCIsInVzZXIiLCJzZXRQcmVzZW5jZSIsImNvbnNvbGUiLCJsb2ciLCJ0YWciLCJkaXNjcmltaW5hdG9yIiwid3JhcE1lc3NhZ2VUb0NvbnRleHQiLCJzZXJ2aWNlcyIsIm1lc3NhZ2UiLCJzdGFydGVkQXQiLCJEYXRlIiwic2VydmVycyIsIndzIiwid3NzIiwiZGIiLCJkaXNjb3JkQWRhcHRlciIsIm1lc3NhZ2VzJCIsInJlcGxpZXMkIiwiYWN0aW9ucyQiLCJwYSIsImRpc2NvcmQiLCJ3aGVuV2VHZXRPbmxpbmUiLCJtYXAiLCJzdWJzY3JpYmUiLCJjb25uZWN0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFDQTs7OztBQUdBOzs7O0FBRUE7Ozs7QUFMc0Q7QUFDdEQ7QUFDQTtBQUtBLE1BQU1BLE9BQU87QUFDWEMsUUFBSyxnQkFETTtBQUVYQyxRQUFNO0FBRkssQ0FBYjs7QUFLQTtBQUNBO0FBZEE7QUFlQSxNQUFNQyxlQUFlQyxVQUFVLE1BQU07QUFDbkNBLFNBQU9DLElBQVAsQ0FBWUMsV0FBWixDQUF3QixFQUFFTixJQUFGLEVBQXhCO0FBQ0FPLFVBQVFDLEdBQVIsQ0FBYSxnQkFBZUosT0FBT0MsSUFBUCxDQUFZSSxHQUFaLElBQW1CTCxPQUFPQyxJQUFQLENBQVlLLGFBQWMsSUFBekU7QUFDRCxDQUhEOztBQUtBLE1BQU1DLHVCQUF1QkMsWUFBWUMsWUFBWTtBQUNuREMsYUFBVyxJQUFJQyxJQUFKLEVBRHdDO0FBRW5ERixTQUZtRDtBQUduREQ7QUFIbUQsQ0FBWixDQUF6Qzs7QUFNQTs7a0JBQ2UsTUFBTUksT0FBTixJQUFpQjtBQUM5QixRQUFNLEVBQUVDLEVBQUYsRUFBTUMsR0FBTixFQUFXQyxFQUFYLEtBQWtCLE1BQU1ILE9BQTlCOztBQUVBLFFBQU1JLGlCQUFpQiwwQkFBdkI7O0FBRUEsUUFBTSxFQUFFQyxTQUFGLEVBQWFDLFFBQWIsRUFBdUJDLFFBQXZCLEtBQW9DSCxjQUExQzs7QUFFQSxRQUFNUixXQUFXLEVBQUVZLElBQUksRUFBRUMsU0FBU0wsY0FBWCxFQUFOLEVBQW1DSCxFQUFuQyxFQUF1Q0MsR0FBdkMsRUFBNENDLEVBQTVDLEVBQWpCOztBQUVBO0FBQ0E7QUFDQUMsaUJBQWVNLGVBQWYsQ0FBK0J2QixZQUEvQjs7QUFFQTtBQUNBO0FBQ0FrQixZQUNHTSxHQURILENBQ09oQixxQkFBcUJDLFFBQXJCLENBRFAsRUFDdUM7QUFEdkMsR0FFR2UsR0FGSCxzQ0FFOEI7QUFGOUIsR0FHR0EsR0FISCxnQ0FHNEI7QUFINUIsR0FJR0MsU0FKSCxDQUlhTixRQUpiLEVBZjhCLENBbUJOOztBQUV4QjtBQUNBRixpQkFBZVMsT0FBZjs7QUFFQSxTQUFPakIsUUFBUDtBQUNELEMiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiL2FwcC9ib3QiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBpbXBvcnRhbW9zIHVuIGFkYXB0YWRvciBwYXJhIGNvbmVjdGFybm9zIGEgRGlzY29yZFxuaW1wb3J0IGdldERpc2NvcmRBZGFwdGVyIGZyb20gJy4vYWRhcHRlcnMvZGlzY29yZEpzJzsgLy8gVE9ETzogTW92ZSB0aGlzIHRvIGFwcC5qc1xuLy8gWSB1biBoYW5kbGVyIGRlIG51ZXN0cm8gYm90LCBlc3RlIGhhbmRsZXIgZXMgY29tbyB1bmEgb3JlamEgbyBcbi8vIGVsIGJ1em9uIHBhcmEgbnVlc3RybyBib3QgcG9ycXVlIGVzIGFsbGkgZW4gZG9uZGUgdmEgYSByZWNpYmlyIGxvcyBtZW5zYWplcy5cbmltcG9ydCBtZXNzYWdlQWN0aW9uQnJva2VyIGZyb20gJy4vbWVzc2FnZUFjdGlvbkJyb2tlcic7XG5cbmltcG9ydCB7IGNvbnZlcnNhdGlvblRvQ29udGV4dCB9IGZyb20gJy4vc2tpbGxzL2NvbnZlcnNhdGlvbic7XG5cbmNvbnN0IGdhbWUgPSB7XG4gIG5hbWU6J3dpdGggeW91ciBtaW5kJyxcbiAgdHlwZTogJ1BMQVlJTkcnXG59O1xuXG4vLyBDcmVhbW9zIHVuYSBmdW5jaW9uIHBhcmEgcXVlIG5vcyBhdmlzZSBlbiBsYSBjb25zb2xhIGN1YW5kb1xuLy8gbnVlc3RybyBib3Qgc2UgaGF5YSBjb25lY3RhZG8gYSBEaXNjb3JkXG5jb25zdCByZWFkeUhhbmRsZXIgPSBjbGllbnQgPT4gKCkgPT4ge1xuICBjbGllbnQudXNlci5zZXRQcmVzZW5jZSh7IGdhbWUgfSk7XG4gIGNvbnNvbGUubG9nKGBMb2dnZWQgaW4gYXMgJHtjbGllbnQudXNlci50YWcgfHwgY2xpZW50LnVzZXIuZGlzY3JpbWluYXRvcn0gIWApO1xufTtcblxuY29uc3Qgd3JhcE1lc3NhZ2VUb0NvbnRleHQgPSBzZXJ2aWNlcyA9PiBtZXNzYWdlID0+ICh7XG4gIHN0YXJ0ZWRBdDogbmV3IERhdGUoKSxcbiAgbWVzc2FnZSxcbiAgc2VydmljZXMsXG59KTtcblxuLy8gRXN0YSBlcyBsYSBmdW5jaW9uIHF1ZSB2YW1vcyBhIGV4cG9ydGFyIHBhcmEgZGVzcGVydGFyIGFsIGJvdFxuZXhwb3J0IGRlZmF1bHQgYXN5bmMgc2VydmVycyA9PiB7XG4gIGNvbnN0IHsgd3MsIHdzcywgZGIgfSA9IGF3YWl0IHNlcnZlcnM7XG4gIFxuICBjb25zdCBkaXNjb3JkQWRhcHRlciA9IGdldERpc2NvcmRBZGFwdGVyKCk7XG4gIFxuICBjb25zdCB7IG1lc3NhZ2VzJCwgcmVwbGllcyQsIGFjdGlvbnMkIH0gPSBkaXNjb3JkQWRhcHRlcjtcbiAgXG4gIGNvbnN0IHNlcnZpY2VzID0geyBwYTogeyBkaXNjb3JkOiBkaXNjb3JkQWRhcHRlciB9LCB3cywgd3NzLCBkYiB9O1xuICBcbiAgLy8gUmVnaXN0cmFtb3MgZWwgaGFuZGxlciBxdWUgY3JlYW1vcyBhbnRlcyBwYXJhIHF1ZSBub3MgYXZpc2VcbiAgLy8gZW4gbGEgY29uc29sYSBjdWFuZG8gZWwgYm90IHNlIGhheWEgY29uZWN0YWRvIGEgRGlzY29yZFxuICBkaXNjb3JkQWRhcHRlci53aGVuV2VHZXRPbmxpbmUocmVhZHlIYW5kbGVyKTtcbiAgXG4gIC8vIFJlZ2lzdHJhbW9zIHVuIGhhbmRsZXIgZGUgbnVlc3RybyBib3QgcGFyYSBxdWUgZXNjdWNoZVxuICAvLyBsb3MgbWVuc2FqZXMgZGVsIGFkYXB0YWRvciBkZSBEaXNjb3JkXG4gIG1lc3NhZ2VzJFxuICAgIC5tYXAod3JhcE1lc3NhZ2VUb0NvbnRleHQoc2VydmljZXMpKSAvLyBDcmVhIHVuIGNvbnRleHRvXG4gICAgLm1hcChjb252ZXJzYXRpb25Ub0NvbnRleHQpIC8vIEFncmVnYSBsYSBjb252ZXJzYWNpb24gKHNpIGVzIHF1ZSBoYXkgdW5hKVxuICAgIC5tYXAobWVzc2FnZUFjdGlvbkJyb2tlcikgLy8gVXNhIGxvcyBza2lsbHMgZGVsIGJvdCBwYXJhIG1hbmVqYXIgZWwgbWVuc2FqZVxuICAgIC5zdWJzY3JpYmUocmVwbGllcyQpOyAvLyBkZXBvc2l0YSBlbCByZXN1bHRhZG8gZW4gcmVwbGllcyRcbiAgXG4gIC8vIEZpbmFsbWVudGUgbGUgcGVkaW1vcyBhbCBhZGFwdGFkb3IgZGUgRGlzY29yZCBxdWUgc2UgY29uZWN0ZS5cbiAgZGlzY29yZEFkYXB0ZXIuY29ubmVjdCgpO1xuICBcbiAgcmV0dXJuIHNlcnZpY2VzO1xufSJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "game",
+        "name",
+        "type",
+        "readyHandler",
+        "client",
+        "user",
+        "setPresence",
+        "console",
+        "log",
+        "tag",
+        "discriminator",
+        "wrapMessageToContext",
+        "services",
+        "message",
+        "startedAt",
+        "Date",
+        "servers",
+        "ws",
+        "wss",
+        "db",
+        "discordAdapter",
+        "messages$",
+        "replies$",
+        "actions$",
+        "pa",
+        "discord",
+        "whenWeGetOnline",
+        "map",
+        "subscribe",
+        "connect"
+      ],
+      "mappings": ";;;;;;AACA;;;;AAGA;;;;AAEA;;;;AALsD;AACtD;AACA;AAKA,MAAMA,OAAO;AACXC,QAAK,gBADM;AAEXC,QAAM;AAFK,CAAb;;AAKA;AACA;AAdA;AAeA,MAAMC,eAAeC,UAAU,MAAM;AACnCA,SAAOC,IAAP,CAAYC,WAAZ,CAAwB,EAAEN,IAAF,EAAxB;AACAO,UAAQC,GAAR,CAAa,gBAAeJ,OAAOC,IAAP,CAAYI,GAAZ,IAAmBL,OAAOC,IAAP,CAAYK,aAAc,IAAzE;AACD,CAHD;;AAKA,MAAMC,uBAAuBC,YAAYC,YAAY;AACnDC,aAAW,IAAIC,IAAJ,EADwC;AAEnDF,SAFmD;AAGnDD;AAHmD,CAAZ,CAAzC;;AAMA;;kBACe,MAAMI,OAAN,IAAiB;AAC9B,QAAM,EAAEC,EAAF,EAAMC,GAAN,EAAWC,EAAX,KAAkB,MAAMH,OAA9B;;AAEA,QAAMI,iBAAiB,0BAAvB;;AAEA,QAAM,EAAEC,SAAF,EAAaC,QAAb,EAAuBC,QAAvB,KAAoCH,cAA1C;;AAEA,QAAMR,WAAW,EAAEY,IAAI,EAAEC,SAASL,cAAX,EAAN,EAAmCH,EAAnC,EAAuCC,GAAvC,EAA4CC,EAA5C,EAAjB;;AAEA;AACA;AACAC,iBAAeM,eAAf,CAA+BvB,YAA/B;;AAEA;AACA;AACAkB,YACGM,GADH,CACOhB,qBAAqBC,QAArB,CADP,EACuC;AADvC,GAEGe,GAFH,sCAE8B;AAF9B,GAGGA,GAHH,gCAG4B;AAH5B,GAIGC,SAJH,CAIaN,QAJb,EAf8B,CAmBN;;AAExB;AACAF,iBAAeS,OAAf;;AAEA,SAAOjB,QAAP;AACD,C",
+      "file": "index.js",
+      "sourceRoot": "/app/bot",
+      "sourcesContent": [
+        "// importamos un adaptador para conectarnos a Discord\nimport getDiscordAdapter from './adapters/discordJs'; // TODO: Move this to app.js\n// Y un handler de nuestro bot, este handler es como una oreja o \n// el buzon para nuestro bot porque es alli en donde va a recibir los mensajes.\nimport messageActionBroker from './messageActionBroker';\n\nimport { conversationToContext } from './skills/conversation';\n\nconst game = {\n  name:'with your mind',\n  type: 'PLAYING'\n};\n\n// Creamos una funcion para que nos avise en la consola cuando\n// nuestro bot se haya conectado a Discord\nconst readyHandler = client => () => {\n  client.user.setPresence({ game });\n  console.log(`Logged in as ${client.user.tag || client.user.discriminator} !`);\n};\n\nconst wrapMessageToContext = services => message => ({\n  startedAt: new Date(),\n  message,\n  services,\n});\n\n// Esta es la funcion que vamos a exportar para despertar al bot\nexport default async servers => {\n  const { ws, wss, db } = await servers;\n  \n  const discordAdapter = getDiscordAdapter();\n  \n  const { messages$, replies$, actions$ } = discordAdapter;\n  \n  const services = { pa: { discord: discordAdapter }, ws, wss, db };\n  \n  // Registramos el handler que creamos antes para que nos avise\n  // en la consola cuando el bot se haya conectado a Discord\n  discordAdapter.whenWeGetOnline(readyHandler);\n  \n  // Registramos un handler de nuestro bot para que escuche\n  // los mensajes del adaptador de Discord\n  messages$\n    .map(wrapMessageToContext(services)) // Crea un contexto\n    .map(conversationToContext) // Agrega la conversacion (si es que hay una)\n    .map(messageActionBroker) // Usa los skills del bot para manejar el mensaje\n    .subscribe(replies$); // deposita el resultado en replies$\n  \n  // Finalmente le pedimos al adaptador de Discord que se conecte.\n  discordAdapter.connect();\n  \n  return services;\n}"
+      ]
+    },
+    "mtime": 1519924271848
+  },
+  "{\"filename\":\"/app/bot/adapters/discordJs/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/adapters/discordJs\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "discord.js",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "Discord"
+              }
+            ]
+          },
+          {
+            "source": "rxjs",
+            "imported": [
+              "Observable",
+              "Subject"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "Observable",
+                "local": "Observable"
+              },
+              {
+                "kind": "named",
+                "imported": "Subject",
+                "local": "Subject"
+              }
+            ]
+          },
+          {
+            "source": "./handlers",
+            "imported": [
+              "handleReplies",
+              "handleActions"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "handleReplies",
+                "local": "handleReplies"
+              },
+              {
+                "kind": "named",
+                "imported": "handleActions",
+                "local": "handleActions"
+              }
+            ]
+          },
+          {
+            "source": "./helpers",
+            "imported": [
+              "notOwnMessage"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "notOwnMessage",
+                "local": "notOwnMessage"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/adapters/discordJs/index.js",
+      "filenameRelative": "/app/bot/adapters/discordJs/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/bot/adapters/discordJs",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/adapters/discordJs",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _discord = require('discord.js');\n\nvar _discord2 = _interopRequireDefault(_discord);\n\nvar _rxjs = require('rxjs');\n\nvar _handlers = require('./handlers');\n\nvar _helpers = require('./helpers');\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst client = new _discord2.default.Client();\nconst token = process.env.DISCORD_BOT_TOKEN;\n\nconst rawMessages$ = _rxjs.Observable.fromEvent(client, 'message').filter((0, _helpers.notOwnMessage)(client));\n\nconst replies$ = new _rxjs.Subject();\nconst messages$ = _rxjs.Observable.from(rawMessages$);\nconst botLoop$ = _rxjs.Observable.zip(rawMessages$, replies$).map(async ([sourceMsg, reply]) => [await sourceMsg, await reply]);\n\nconst botLoopSubscription = botLoop$.subscribe(_handlers.handleReplies);\n\nconst actions$ = new _rxjs.Subject();\nconst actionsSubscription = actions$.subscribe(_handlers.handleActions);\n\nexports.default = config => ({\n  messages$,\n  replies$,\n  actions$,\n  connect: () => client.login(token),\n  whenWeGetOnline: handler => client.on('ready', handler(client))\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImNsaWVudCIsIkNsaWVudCIsInRva2VuIiwicHJvY2VzcyIsImVudiIsIkRJU0NPUkRfQk9UX1RPS0VOIiwicmF3TWVzc2FnZXMkIiwiZnJvbUV2ZW50IiwiZmlsdGVyIiwicmVwbGllcyQiLCJtZXNzYWdlcyQiLCJmcm9tIiwiYm90TG9vcCQiLCJ6aXAiLCJtYXAiLCJzb3VyY2VNc2ciLCJyZXBseSIsImJvdExvb3BTdWJzY3JpcHRpb24iLCJzdWJzY3JpYmUiLCJhY3Rpb25zJCIsImFjdGlvbnNTdWJzY3JpcHRpb24iLCJjb25maWciLCJjb25uZWN0IiwibG9naW4iLCJ3aGVuV2VHZXRPbmxpbmUiLCJoYW5kbGVyIiwib24iXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBOzs7O0FBQ0E7O0FBRUE7O0FBQ0E7Ozs7QUFFQSxNQUFNQSxTQUFTLElBQUksa0JBQVFDLE1BQVosRUFBZjtBQUNBLE1BQU1DLFFBQVFDLFFBQVFDLEdBQVIsQ0FBWUMsaUJBQTFCOztBQUVBLE1BQU1DLGVBQWUsaUJBQ2xCQyxTQURrQixDQUNSUCxNQURRLEVBQ0EsU0FEQSxFQUVsQlEsTUFGa0IsQ0FFWCw0QkFBY1IsTUFBZCxDQUZXLENBQXJCOztBQUlBLE1BQU1TLFdBQVcsbUJBQWpCO0FBQ0EsTUFBTUMsWUFBWSxpQkFBV0MsSUFBWCxDQUFnQkwsWUFBaEIsQ0FBbEI7QUFDQSxNQUFNTSxXQUFXLGlCQUFXQyxHQUFYLENBQWVQLFlBQWYsRUFBNkJHLFFBQTdCLEVBQ2RLLEdBRGMsQ0FDVixPQUFPLENBQUNDLFNBQUQsRUFBWUMsS0FBWixDQUFQLEtBQStCLENBQUMsTUFBTUQsU0FBUCxFQUFrQixNQUFNQyxLQUF4QixDQURyQixDQUFqQjs7QUFHQSxNQUFNQyxzQkFBc0JMLFNBQVNNLFNBQVQseUJBQTVCOztBQUVBLE1BQU1DLFdBQVcsbUJBQWpCO0FBQ0EsTUFBTUMsc0JBQXNCRCxTQUFTRCxTQUFULHlCQUE1Qjs7a0JBRWVHLFdBQVc7QUFDeEJYLFdBRHdCO0FBRXhCRCxVQUZ3QjtBQUd4QlUsVUFId0I7QUFJeEJHLFdBQVMsTUFBTXRCLE9BQU91QixLQUFQLENBQWFyQixLQUFiLENBSlM7QUFLeEJzQixtQkFBaUJDLFdBQVd6QixPQUFPMEIsRUFBUCxDQUFVLE9BQVYsRUFBbUJELFFBQVF6QixNQUFSLENBQW5CO0FBTEosQ0FBWCxDIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlUm9vdCI6Ii9hcHAvYm90L2FkYXB0ZXJzL2Rpc2NvcmRKcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBEaXNjb3JkIGZyb20gJ2Rpc2NvcmQuanMnO1xuaW1wb3J0IHsgT2JzZXJ2YWJsZSwgU3ViamVjdCB9IGZyb20gJ3J4anMnO1xuXG5pbXBvcnQgeyBoYW5kbGVSZXBsaWVzLCBoYW5kbGVBY3Rpb25zIH0gZnJvbSAnLi9oYW5kbGVycyc7XG5pbXBvcnQgeyBub3RPd25NZXNzYWdlIH0gZnJvbSAnLi9oZWxwZXJzJztcblxuY29uc3QgY2xpZW50ID0gbmV3IERpc2NvcmQuQ2xpZW50KCk7XG5jb25zdCB0b2tlbiA9IHByb2Nlc3MuZW52LkRJU0NPUkRfQk9UX1RPS0VOO1xuXG5jb25zdCByYXdNZXNzYWdlcyQgPSBPYnNlcnZhYmxlXG4gIC5mcm9tRXZlbnQoY2xpZW50LCAnbWVzc2FnZScpXG4gIC5maWx0ZXIobm90T3duTWVzc2FnZShjbGllbnQpKTtcblxuY29uc3QgcmVwbGllcyQgPSBuZXcgU3ViamVjdCgpO1xuY29uc3QgbWVzc2FnZXMkID0gT2JzZXJ2YWJsZS5mcm9tKHJhd01lc3NhZ2VzJCk7XG5jb25zdCBib3RMb29wJCA9IE9ic2VydmFibGUuemlwKHJhd01lc3NhZ2VzJCwgcmVwbGllcyQpICBcbiAgLm1hcChhc3luYyAoW3NvdXJjZU1zZywgcmVwbHldKSA9PiAoW2F3YWl0IHNvdXJjZU1zZywgYXdhaXQgcmVwbHldKSk7XG5cbmNvbnN0IGJvdExvb3BTdWJzY3JpcHRpb24gPSBib3RMb29wJC5zdWJzY3JpYmUoaGFuZGxlUmVwbGllcyk7XG5cbmNvbnN0IGFjdGlvbnMkID0gbmV3IFN1YmplY3QoKTtcbmNvbnN0IGFjdGlvbnNTdWJzY3JpcHRpb24gPSBhY3Rpb25zJC5zdWJzY3JpYmUoaGFuZGxlQWN0aW9ucyk7XG5cbmV4cG9ydCBkZWZhdWx0IGNvbmZpZyA9PiAoe1xuICBtZXNzYWdlcyQsXG4gIHJlcGxpZXMkLFxuICBhY3Rpb25zJCxcbiAgY29ubmVjdDogKCkgPT4gY2xpZW50LmxvZ2luKHRva2VuKSxcbiAgd2hlbldlR2V0T25saW5lOiBoYW5kbGVyID0+IGNsaWVudC5vbigncmVhZHknLCBoYW5kbGVyKGNsaWVudCkpLFxufSk7XG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "client",
+        "Client",
+        "token",
+        "process",
+        "env",
+        "DISCORD_BOT_TOKEN",
+        "rawMessages$",
+        "fromEvent",
+        "filter",
+        "replies$",
+        "messages$",
+        "from",
+        "botLoop$",
+        "zip",
+        "map",
+        "sourceMsg",
+        "reply",
+        "botLoopSubscription",
+        "subscribe",
+        "actions$",
+        "actionsSubscription",
+        "config",
+        "connect",
+        "login",
+        "whenWeGetOnline",
+        "handler",
+        "on"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;AAEA;;AACA;;;;AAEA,MAAMA,SAAS,IAAI,kBAAQC,MAAZ,EAAf;AACA,MAAMC,QAAQC,QAAQC,GAAR,CAAYC,iBAA1B;;AAEA,MAAMC,eAAe,iBAClBC,SADkB,CACRP,MADQ,EACA,SADA,EAElBQ,MAFkB,CAEX,4BAAcR,MAAd,CAFW,CAArB;;AAIA,MAAMS,WAAW,mBAAjB;AACA,MAAMC,YAAY,iBAAWC,IAAX,CAAgBL,YAAhB,CAAlB;AACA,MAAMM,WAAW,iBAAWC,GAAX,CAAeP,YAAf,EAA6BG,QAA7B,EACdK,GADc,CACV,OAAO,CAACC,SAAD,EAAYC,KAAZ,CAAP,KAA+B,CAAC,MAAMD,SAAP,EAAkB,MAAMC,KAAxB,CADrB,CAAjB;;AAGA,MAAMC,sBAAsBL,SAASM,SAAT,yBAA5B;;AAEA,MAAMC,WAAW,mBAAjB;AACA,MAAMC,sBAAsBD,SAASD,SAAT,yBAA5B;;kBAEeG,WAAW;AACxBX,WADwB;AAExBD,UAFwB;AAGxBU,UAHwB;AAIxBG,WAAS,MAAMtB,OAAOuB,KAAP,CAAarB,KAAb,CAJS;AAKxBsB,mBAAiBC,WAAWzB,OAAO0B,EAAP,CAAU,OAAV,EAAmBD,QAAQzB,MAAR,CAAnB;AALJ,CAAX,C",
+      "file": "index.js",
+      "sourceRoot": "/app/bot/adapters/discordJs",
+      "sourcesContent": [
+        "import Discord from 'discord.js';\nimport { Observable, Subject } from 'rxjs';\n\nimport { handleReplies, handleActions } from './handlers';\nimport { notOwnMessage } from './helpers';\n\nconst client = new Discord.Client();\nconst token = process.env.DISCORD_BOT_TOKEN;\n\nconst rawMessages$ = Observable\n  .fromEvent(client, 'message')\n  .filter(notOwnMessage(client));\n\nconst replies$ = new Subject();\nconst messages$ = Observable.from(rawMessages$);\nconst botLoop$ = Observable.zip(rawMessages$, replies$)  \n  .map(async ([sourceMsg, reply]) => ([await sourceMsg, await reply]));\n\nconst botLoopSubscription = botLoop$.subscribe(handleReplies);\n\nconst actions$ = new Subject();\nconst actionsSubscription = actions$.subscribe(handleActions);\n\nexport default config => ({\n  messages$,\n  replies$,\n  actions$,\n  connect: () => client.login(token),\n  whenWeGetOnline: handler => client.on('ready', handler(client)),\n});\n"
+      ]
+    },
+    "mtime": 1519924271836
+  },
+  "{\"filename\":\"/app/bot/adapters/discordJs/handlers.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/adapters/discordJs\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [
+            "handleReplies",
+            "handleActions"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "handleReplies",
+              "exported": "handleReplies"
+            },
+            {
+              "kind": "local",
+              "local": "handleActions",
+              "exported": "handleActions"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/adapters/discordJs/handlers.js",
+      "filenameRelative": "/app/bot/adapters/discordJs/handlers.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "handlers.js",
+      "sourceFileName": "handlers.js",
+      "sourceRoot": "/app/bot/adapters/discordJs",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/adapters/discordJs",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "handlers"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nconst sendMessageResponse = (sourceMessage, response) => sourceMessage.channel.send(response);\n\nconst handleReplies = exports.handleReplies = async msgRes => {\n  const [userMessage, botResponse] = await msgRes;\n  console.log('Handling for type: ', botResponse);\n  switch (botResponse.type) {\n    case 'reply':\n      return sendMessageResponse(userMessage, botResponse.content);\n    case 'default':\n      return;\n  }\n};\n\nconst handleActions = exports.handleActions = action => console.log('Handling platform action: ', action);\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhhbmRsZXJzLmpzIl0sIm5hbWVzIjpbInNlbmRNZXNzYWdlUmVzcG9uc2UiLCJzb3VyY2VNZXNzYWdlIiwicmVzcG9uc2UiLCJjaGFubmVsIiwic2VuZCIsImhhbmRsZVJlcGxpZXMiLCJtc2dSZXMiLCJ1c2VyTWVzc2FnZSIsImJvdFJlc3BvbnNlIiwiY29uc29sZSIsImxvZyIsInR5cGUiLCJjb250ZW50IiwiaGFuZGxlQWN0aW9ucyIsImFjdGlvbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQSxNQUFNQSxzQkFBc0IsQ0FBQ0MsYUFBRCxFQUFnQkMsUUFBaEIsS0FDMUJELGNBQWNFLE9BQWQsQ0FBc0JDLElBQXRCLENBQTJCRixRQUEzQixDQURGOztBQUdPLE1BQU1HLHdDQUFnQixNQUFNQyxNQUFOLElBQWdCO0FBQzNDLFFBQU0sQ0FBRUMsV0FBRixFQUFlQyxXQUFmLElBQStCLE1BQU1GLE1BQTNDO0FBQ0FHLFVBQVFDLEdBQVIsQ0FBWSxxQkFBWixFQUFtQ0YsV0FBbkM7QUFDQSxVQUFRQSxZQUFZRyxJQUFwQjtBQUNFLFNBQUssT0FBTDtBQUNFLGFBQU9YLG9CQUFvQk8sV0FBcEIsRUFBaUNDLFlBQVlJLE9BQTdDLENBQVA7QUFDRixTQUFLLFNBQUw7QUFDRTtBQUpKO0FBTUQsQ0FUTTs7QUFXQSxNQUFNQyx3Q0FBZ0JDLFVBQVVMLFFBQVFDLEdBQVIsQ0FBWSw0QkFBWixFQUEwQ0ksTUFBMUMsQ0FBaEMiLCJmaWxlIjoiaGFuZGxlcnMuanMiLCJzb3VyY2VSb290IjoiL2FwcC9ib3QvYWRhcHRlcnMvZGlzY29yZEpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3Qgc2VuZE1lc3NhZ2VSZXNwb25zZSA9IChzb3VyY2VNZXNzYWdlLCByZXNwb25zZSkgPT4gXG4gIHNvdXJjZU1lc3NhZ2UuY2hhbm5lbC5zZW5kKHJlc3BvbnNlKTtcblxuZXhwb3J0IGNvbnN0IGhhbmRsZVJlcGxpZXMgPSBhc3luYyBtc2dSZXMgPT4ge1xuICBjb25zdCBbIHVzZXJNZXNzYWdlLCBib3RSZXNwb25zZSBdID0gYXdhaXQgbXNnUmVzO1xuICBjb25zb2xlLmxvZygnSGFuZGxpbmcgZm9yIHR5cGU6ICcsIGJvdFJlc3BvbnNlKVxuICBzd2l0Y2ggKGJvdFJlc3BvbnNlLnR5cGUpIHtcbiAgICBjYXNlICdyZXBseSc6XG4gICAgICByZXR1cm4gc2VuZE1lc3NhZ2VSZXNwb25zZSh1c2VyTWVzc2FnZSwgYm90UmVzcG9uc2UuY29udGVudCk7XG4gICAgY2FzZSAnZGVmYXVsdCc6XG4gICAgICByZXR1cm47XG4gIH1cbn07XG5cbmV4cG9ydCBjb25zdCBoYW5kbGVBY3Rpb25zID0gYWN0aW9uID0+IGNvbnNvbGUubG9nKCdIYW5kbGluZyBwbGF0Zm9ybSBhY3Rpb246ICcsIGFjdGlvbik7ICJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "handlers.js"
+      ],
+      "names": [
+        "sendMessageResponse",
+        "sourceMessage",
+        "response",
+        "channel",
+        "send",
+        "handleReplies",
+        "msgRes",
+        "userMessage",
+        "botResponse",
+        "console",
+        "log",
+        "type",
+        "content",
+        "handleActions",
+        "action"
+      ],
+      "mappings": ";;;;;AAAA,MAAMA,sBAAsB,CAACC,aAAD,EAAgBC,QAAhB,KAC1BD,cAAcE,OAAd,CAAsBC,IAAtB,CAA2BF,QAA3B,CADF;;AAGO,MAAMG,wCAAgB,MAAMC,MAAN,IAAgB;AAC3C,QAAM,CAAEC,WAAF,EAAeC,WAAf,IAA+B,MAAMF,MAA3C;AACAG,UAAQC,GAAR,CAAY,qBAAZ,EAAmCF,WAAnC;AACA,UAAQA,YAAYG,IAApB;AACE,SAAK,OAAL;AACE,aAAOX,oBAAoBO,WAApB,EAAiCC,YAAYI,OAA7C,CAAP;AACF,SAAK,SAAL;AACE;AAJJ;AAMD,CATM;;AAWA,MAAMC,wCAAgBC,UAAUL,QAAQC,GAAR,CAAY,4BAAZ,EAA0CI,MAA1C,CAAhC",
+      "file": "handlers.js",
+      "sourceRoot": "/app/bot/adapters/discordJs",
+      "sourcesContent": [
+        "const sendMessageResponse = (sourceMessage, response) => \n  sourceMessage.channel.send(response);\n\nexport const handleReplies = async msgRes => {\n  const [ userMessage, botResponse ] = await msgRes;\n  console.log('Handling for type: ', botResponse)\n  switch (botResponse.type) {\n    case 'reply':\n      return sendMessageResponse(userMessage, botResponse.content);\n    case 'default':\n      return;\n  }\n};\n\nexport const handleActions = action => console.log('Handling platform action: ', action); "
+      ]
+    },
+    "mtime": 1519924271824
+  },
+  "{\"filename\":\"/app/bot/adapters/discordJs/helpers.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/adapters/discordJs\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [
+            "notOwnMessage"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "notOwnMessage",
+              "exported": "notOwnMessage"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/adapters/discordJs/helpers.js",
+      "filenameRelative": "/app/bot/adapters/discordJs/helpers.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "helpers.js",
+      "sourceFileName": "helpers.js",
+      "sourceRoot": "/app/bot/adapters/discordJs",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/adapters/discordJs",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "helpers"
+    },
+    "ignored": false,
+    "code": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n// Esto lo usamos para evitar interpretar mensajes propios\nconst notOwnMessage = exports.notOwnMessage = client => message => Boolean(message.author.id !== client.user.id);\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhlbHBlcnMuanMiXSwibmFtZXMiOlsibm90T3duTWVzc2FnZSIsImNsaWVudCIsIm1lc3NhZ2UiLCJCb29sZWFuIiwiYXV0aG9yIiwiaWQiLCJ1c2VyIl0sIm1hcHBpbmdzIjoiOzs7OztBQUFBO0FBQ08sTUFBTUEsd0NBQWdCQyxVQUFVQyxXQUFXQyxRQUFRRCxRQUFRRSxNQUFSLENBQWVDLEVBQWYsS0FBc0JKLE9BQU9LLElBQVAsQ0FBWUQsRUFBMUMsQ0FBM0MiLCJmaWxlIjoiaGVscGVycy5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL2JvdC9hZGFwdGVycy9kaXNjb3JkSnMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBFc3RvIGxvIHVzYW1vcyBwYXJhIGV2aXRhciBpbnRlcnByZXRhciBtZW5zYWplcyBwcm9waW9zXG5leHBvcnQgY29uc3Qgbm90T3duTWVzc2FnZSA9IGNsaWVudCA9PiBtZXNzYWdlID0+IEJvb2xlYW4obWVzc2FnZS5hdXRob3IuaWQgIT09IGNsaWVudC51c2VyLmlkKTsiXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "helpers.js"
+      ],
+      "names": [
+        "notOwnMessage",
+        "client",
+        "message",
+        "Boolean",
+        "author",
+        "id",
+        "user"
+      ],
+      "mappings": ";;;;;AAAA;AACO,MAAMA,wCAAgBC,UAAUC,WAAWC,QAAQD,QAAQE,MAAR,CAAeC,EAAf,KAAsBJ,OAAOK,IAAP,CAAYD,EAA1C,CAA3C",
+      "file": "helpers.js",
+      "sourceRoot": "/app/bot/adapters/discordJs",
+      "sourcesContent": [
+        "// Esto lo usamos para evitar interpretar mensajes propios\nexport const notOwnMessage = client => message => Boolean(message.author.id !== client.user.id);"
+      ]
+    },
+    "mtime": 1519924271828
+  },
+  "{\"filename\":\"/app/bot/messageActionBroker.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "util",
+            "imported": [
+              "inspect"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "inspect",
+                "local": "inspect"
+              }
+            ]
+          },
+          {
+            "source": "../nlp",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "askTheIa"
+              }
+            ]
+          },
+          {
+            "source": "./skills",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "handleWithASkill"
+              }
+            ]
+          },
+          {
+            "source": "./skills/staticReplies",
+            "imported": [
+              "getStaticReply"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "getStaticReply",
+                "local": "getStaticReply"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/messageActionBroker.js",
+      "filenameRelative": "/app/bot/messageActionBroker.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "messageActionBroker.js",
+      "sourceFileName": "messageActionBroker.js",
+      "sourceRoot": "/app/bot",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "messageActionBroker"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _util = require('util');\n\nvar _nlp = require('../nlp');\n\nvar _nlp2 = _interopRequireDefault(_nlp);\n\nvar _skills = require('./skills');\n\nvar _skills2 = _interopRequireDefault(_skills);\n\nvar _staticReplies = require('./skills/staticReplies');\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst botNameRegExp = /an?na/;\n/**\n * message interface :\n * {\n *   content: String,\n *   activeConversation: Boolean,\n * }\n */\n\nexports.default = ctx => {\n  // Guardamos el texto en la constante 'content'\n  const { content } = ctx.message;\n  const { isActive } = ctx.conversation;\n  // y una copia en minusculas\n  const contentLc = content.toLowerCase();\n  // Revisamos si el texto del mensaje contiene el nombre del bot\n  const isMyNameInTheMessage = botNameRegExp.test(contentLc);\n  // Y buscamos una respuesta estatica (antes de llamar a la IA), \n  const staticReply = (0, _staticReplies.getStaticReply)(contentLc);\n\n  const fallbackAction = Promise.resolve({ type: 'ignored', content: '', contentType: 'none' });\n\n  return (\n    // Si tenemos una respuesta estatica, la mandamos al canal y listo...\n    staticReply.type === 'response' ? Promise.resolve(staticReply)\n    // ... de lo contrario, verificamos si el bot es nombrado en el mensaje\n    // o si estamos en una conversacion activa\n    : isMyNameInTheMessage || isActive ?\n    // si es el caso, consultamos a la IA\n    (0, _nlp2.default)(content).then(_skills2.default).catch(err => fallbackAction)\n    // si nada de esto ocurre y llegamos hasta este punto, quiere decir que \n    // el mensaje no era para nosotros, asi que no hacemos nada :(\n    : fallbackAction\n  );\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lc3NhZ2VBY3Rpb25Ccm9rZXIuanMiXSwibmFtZXMiOlsiYm90TmFtZVJlZ0V4cCIsImN0eCIsImNvbnRlbnQiLCJtZXNzYWdlIiwiaXNBY3RpdmUiLCJjb252ZXJzYXRpb24iLCJjb250ZW50TGMiLCJ0b0xvd2VyQ2FzZSIsImlzTXlOYW1lSW5UaGVNZXNzYWdlIiwidGVzdCIsInN0YXRpY1JlcGx5IiwiZmFsbGJhY2tBY3Rpb24iLCJQcm9taXNlIiwicmVzb2x2ZSIsInR5cGUiLCJjb250ZW50VHlwZSIsInRoZW4iLCJjYXRjaCIsImVyciJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7O0FBRUE7Ozs7QUFDQTs7OztBQUNBOzs7O0FBRUEsTUFBTUEsZ0JBQWdCLE9BQXRCO0FBQ0E7Ozs7Ozs7O2tCQU9lQyxPQUFPO0FBQ3BCO0FBQ0EsUUFBTSxFQUFFQyxPQUFGLEtBQWNELElBQUlFLE9BQXhCO0FBQ0EsUUFBTSxFQUFFQyxRQUFGLEtBQWVILElBQUlJLFlBQXpCO0FBQ0E7QUFDQSxRQUFNQyxZQUFZSixRQUFRSyxXQUFSLEVBQWxCO0FBQ0E7QUFDQSxRQUFNQyx1QkFBdUJSLGNBQWNTLElBQWQsQ0FBbUJILFNBQW5CLENBQTdCO0FBQ0E7QUFDQSxRQUFNSSxjQUFjLG1DQUFlSixTQUFmLENBQXBCOztBQUVBLFFBQU1LLGlCQUFpQkMsUUFBUUMsT0FBUixDQUFnQixFQUFFQyxNQUFNLFNBQVIsRUFBbUJaLFNBQVMsRUFBNUIsRUFBZ0NhLGFBQWEsTUFBN0MsRUFBaEIsQ0FBdkI7O0FBRUE7QUFDRTtBQUNDTCxnQkFBWUksSUFBWixLQUFxQixVQUF0QixHQUNJRixRQUFRQyxPQUFSLENBQWdCSCxXQUFoQjtBQUNGO0FBQ0E7QUFIRixNQUlLRix3QkFBd0JKLFFBQXpCO0FBQ0Y7QUFDRSx1QkFBU0YsT0FBVCxFQUNHYyxJQURILG1CQUVHQyxLQUZILENBRVNDLE9BQU9QLGNBRmhCO0FBR0Y7QUFDQTtBQU5FLE1BT0FBO0FBYk47QUFnQkQsQyIsImZpbGUiOiJtZXNzYWdlQWN0aW9uQnJva2VyLmpzIiwic291cmNlUm9vdCI6Ii9hcHAvYm90Iiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgaW5zcGVjdCB9IGZyb20gJ3V0aWwnO1xuXG5pbXBvcnQgYXNrVGhlSWEgZnJvbSAnLi4vbmxwJztcbmltcG9ydCBoYW5kbGVXaXRoQVNraWxsIGZyb20gJy4vc2tpbGxzJztcbmltcG9ydCB7IGdldFN0YXRpY1JlcGx5IH0gZnJvbSAnLi9za2lsbHMvc3RhdGljUmVwbGllcyc7XG5cbmNvbnN0IGJvdE5hbWVSZWdFeHAgPSAvYW4/bmEvO1xuLyoqXG4gKiBtZXNzYWdlIGludGVyZmFjZSA6XG4gKiB7XG4gKiAgIGNvbnRlbnQ6IFN0cmluZyxcbiAqICAgYWN0aXZlQ29udmVyc2F0aW9uOiBCb29sZWFuLFxuICogfVxuICovXG5leHBvcnQgZGVmYXVsdCBjdHggPT4ge1xuICAvLyBHdWFyZGFtb3MgZWwgdGV4dG8gZW4gbGEgY29uc3RhbnRlICdjb250ZW50J1xuICBjb25zdCB7IGNvbnRlbnQgfSA9IGN0eC5tZXNzYWdlO1xuICBjb25zdCB7IGlzQWN0aXZlIH0gPSBjdHguY29udmVyc2F0aW9uO1xuICAvLyB5IHVuYSBjb3BpYSBlbiBtaW51c2N1bGFzXG4gIGNvbnN0IGNvbnRlbnRMYyA9IGNvbnRlbnQudG9Mb3dlckNhc2UoKTtcbiAgLy8gUmV2aXNhbW9zIHNpIGVsIHRleHRvIGRlbCBtZW5zYWplIGNvbnRpZW5lIGVsIG5vbWJyZSBkZWwgYm90XG4gIGNvbnN0IGlzTXlOYW1lSW5UaGVNZXNzYWdlID0gYm90TmFtZVJlZ0V4cC50ZXN0KGNvbnRlbnRMYyk7XG4gIC8vIFkgYnVzY2Ftb3MgdW5hIHJlc3B1ZXN0YSBlc3RhdGljYSAoYW50ZXMgZGUgbGxhbWFyIGEgbGEgSUEpLCBcbiAgY29uc3Qgc3RhdGljUmVwbHkgPSBnZXRTdGF0aWNSZXBseShjb250ZW50TGMpO1xuICBcbiAgY29uc3QgZmFsbGJhY2tBY3Rpb24gPSBQcm9taXNlLnJlc29sdmUoeyB0eXBlOiAnaWdub3JlZCcsIGNvbnRlbnQ6ICcnLCBjb250ZW50VHlwZTogJ25vbmUnIH0pO1xuICBcbiAgcmV0dXJuIChcbiAgICAvLyBTaSB0ZW5lbW9zIHVuYSByZXNwdWVzdGEgZXN0YXRpY2EsIGxhIG1hbmRhbW9zIGFsIGNhbmFsIHkgbGlzdG8uLi5cbiAgICAoc3RhdGljUmVwbHkudHlwZSA9PT0gJ3Jlc3BvbnNlJylcbiAgICAgID8gUHJvbWlzZS5yZXNvbHZlKHN0YXRpY1JlcGx5KVxuICAgICAgLy8gLi4uIGRlIGxvIGNvbnRyYXJpbywgdmVyaWZpY2Ftb3Mgc2kgZWwgYm90IGVzIG5vbWJyYWRvIGVuIGVsIG1lbnNhamVcbiAgICAgIC8vIG8gc2kgZXN0YW1vcyBlbiB1bmEgY29udmVyc2FjaW9uIGFjdGl2YVxuICAgICAgOiAoaXNNeU5hbWVJblRoZU1lc3NhZ2UgfHwgaXNBY3RpdmUpXG4gICAgICAvLyBzaSBlcyBlbCBjYXNvLCBjb25zdWx0YW1vcyBhIGxhIElBXG4gICAgICA/IGFza1RoZUlhKGNvbnRlbnQpXG4gICAgICAgICAgLnRoZW4oaGFuZGxlV2l0aEFTa2lsbClcbiAgICAgICAgICAuY2F0Y2goZXJyID0+IGZhbGxiYWNrQWN0aW9uKVxuICAgICAgLy8gc2kgbmFkYSBkZSBlc3RvIG9jdXJyZSB5IGxsZWdhbW9zIGhhc3RhIGVzdGUgcHVudG8sIHF1aWVyZSBkZWNpciBxdWUgXG4gICAgICAvLyBlbCBtZW5zYWplIG5vIGVyYSBwYXJhIG5vc290cm9zLCBhc2kgcXVlIG5vIGhhY2Vtb3MgbmFkYSA6KFxuICAgICAgOiBmYWxsYmFja0FjdGlvblxuICApO1xuXG59O1xuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "messageActionBroker.js"
+      ],
+      "names": [
+        "botNameRegExp",
+        "ctx",
+        "content",
+        "message",
+        "isActive",
+        "conversation",
+        "contentLc",
+        "toLowerCase",
+        "isMyNameInTheMessage",
+        "test",
+        "staticReply",
+        "fallbackAction",
+        "Promise",
+        "resolve",
+        "type",
+        "contentType",
+        "then",
+        "catch",
+        "err"
+      ],
+      "mappings": ";;;;;;AAAA;;AAEA;;;;AACA;;;;AACA;;;;AAEA,MAAMA,gBAAgB,OAAtB;AACA;;;;;;;;kBAOeC,OAAO;AACpB;AACA,QAAM,EAAEC,OAAF,KAAcD,IAAIE,OAAxB;AACA,QAAM,EAAEC,QAAF,KAAeH,IAAII,YAAzB;AACA;AACA,QAAMC,YAAYJ,QAAQK,WAAR,EAAlB;AACA;AACA,QAAMC,uBAAuBR,cAAcS,IAAd,CAAmBH,SAAnB,CAA7B;AACA;AACA,QAAMI,cAAc,mCAAeJ,SAAf,CAApB;;AAEA,QAAMK,iBAAiBC,QAAQC,OAAR,CAAgB,EAAEC,MAAM,SAAR,EAAmBZ,SAAS,EAA5B,EAAgCa,aAAa,MAA7C,EAAhB,CAAvB;;AAEA;AACE;AACCL,gBAAYI,IAAZ,KAAqB,UAAtB,GACIF,QAAQC,OAAR,CAAgBH,WAAhB;AACF;AACA;AAHF,MAIKF,wBAAwBJ,QAAzB;AACF;AACE,uBAASF,OAAT,EACGc,IADH,mBAEGC,KAFH,CAESC,OAAOP,cAFhB;AAGF;AACA;AANE,MAOAA;AAbN;AAgBD,C",
+      "file": "messageActionBroker.js",
+      "sourceRoot": "/app/bot",
+      "sourcesContent": [
+        "import { inspect } from 'util';\n\nimport askTheIa from '../nlp';\nimport handleWithASkill from './skills';\nimport { getStaticReply } from './skills/staticReplies';\n\nconst botNameRegExp = /an?na/;\n/**\n * message interface :\n * {\n *   content: String,\n *   activeConversation: Boolean,\n * }\n */\nexport default ctx => {\n  // Guardamos el texto en la constante 'content'\n  const { content } = ctx.message;\n  const { isActive } = ctx.conversation;\n  // y una copia en minusculas\n  const contentLc = content.toLowerCase();\n  // Revisamos si el texto del mensaje contiene el nombre del bot\n  const isMyNameInTheMessage = botNameRegExp.test(contentLc);\n  // Y buscamos una respuesta estatica (antes de llamar a la IA), \n  const staticReply = getStaticReply(contentLc);\n  \n  const fallbackAction = Promise.resolve({ type: 'ignored', content: '', contentType: 'none' });\n  \n  return (\n    // Si tenemos una respuesta estatica, la mandamos al canal y listo...\n    (staticReply.type === 'response')\n      ? Promise.resolve(staticReply)\n      // ... de lo contrario, verificamos si el bot es nombrado en el mensaje\n      // o si estamos en una conversacion activa\n      : (isMyNameInTheMessage || isActive)\n      // si es el caso, consultamos a la IA\n      ? askTheIa(content)\n          .then(handleWithASkill)\n          .catch(err => fallbackAction)\n      // si nada de esto ocurre y llegamos hasta este punto, quiere decir que \n      // el mensaje no era para nosotros, asi que no hacemos nada :(\n      : fallbackAction\n  );\n\n};\n"
+      ]
+    },
+    "mtime": 1519924271856
+  },
+  "{\"filename\":\"/app/nlp/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/nlp\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "./luis.js",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "askLuis"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [
+            "handleNlpError"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "handleNlpError",
+              "exported": "handleNlpError"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/nlp/index.js",
+      "filenameRelative": "/app/nlp/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/nlp",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/nlp",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.handleNlpError = undefined;\n\nvar _luis = require('./luis.js');\n\nvar _luis2 = _interopRequireDefault(_luis);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst handleNlpError = exports.handleNlpError = err => console.error(err);\n\nfunction evaluateResponse(response) {\n  const { query, topScoringIntent, entities } = response;\n  const { intent, score } = topScoringIntent || {};\n\n  return {\n    type: 'not-sure',\n    intent: score && score < 0.7 || intent === 'None' ? 'NotSure' : intent,\n    entities,\n    query\n  };\n};\n\n/**\n *  :String -> Promise<{\n *    intent: String,\n *    entities: Array[any],\n *    query: String,\n *  }>\n *\n */\n\nexports.default = content => (0, _luis2.default)(content).then(evaluateResponse).catch(handleNlpError);\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImhhbmRsZU5scEVycm9yIiwiZXJyIiwiY29uc29sZSIsImVycm9yIiwiZXZhbHVhdGVSZXNwb25zZSIsInJlc3BvbnNlIiwicXVlcnkiLCJ0b3BTY29yaW5nSW50ZW50IiwiZW50aXRpZXMiLCJpbnRlbnQiLCJzY29yZSIsInR5cGUiLCJjb250ZW50IiwidGhlbiIsImNhdGNoIl0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7Ozs7OztBQUVPLE1BQU1BLDBDQUFpQkMsT0FBT0MsUUFBUUMsS0FBUixDQUFjRixHQUFkLENBQTlCOztBQUVQLFNBQVNHLGdCQUFULENBQTBCQyxRQUExQixFQUFtQztBQUNqQyxRQUFNLEVBQUVDLEtBQUYsRUFBU0MsZ0JBQVQsRUFBMkJDLFFBQTNCLEtBQXlDSCxRQUEvQztBQUNBLFFBQU0sRUFBRUksTUFBRixFQUFVQyxLQUFWLEtBQW9CSCxvQkFBb0IsRUFBOUM7O0FBRUEsU0FBTztBQUNMSSxVQUFNLFVBREQ7QUFFTEYsWUFBVUMsU0FBU0EsUUFBUSxHQUFsQixJQUEwQkQsV0FBVyxNQUF0QyxHQUNKLFNBREksR0FFSkEsTUFKQztBQUtMRCxZQUxLO0FBTUxGO0FBTkssR0FBUDtBQVFEOztBQUVEOzs7Ozs7Ozs7a0JBUWVNLFdBQ2Isb0JBQVFBLE9BQVIsRUFDR0MsSUFESCxDQUNRVCxnQkFEUixFQUVHVSxLQUZILENBRVNkLGNBRlQsQyIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL25scCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBhc2tMdWlzIGZyb20gJy4vbHVpcy5qcyc7XG5cbmV4cG9ydCBjb25zdCBoYW5kbGVObHBFcnJvciA9IGVyciA9PiBjb25zb2xlLmVycm9yKGVycik7XG5cbmZ1bmN0aW9uIGV2YWx1YXRlUmVzcG9uc2UocmVzcG9uc2Upe1xuICBjb25zdCB7IHF1ZXJ5LCB0b3BTY29yaW5nSW50ZW50LCBlbnRpdGllcyAgfSA9IHJlc3BvbnNlO1xuICBjb25zdCB7IGludGVudCwgc2NvcmUgfSA9IHRvcFNjb3JpbmdJbnRlbnQgfHwge307XG5cbiAgcmV0dXJuIHtcbiAgICB0eXBlOiAnbm90LXN1cmUnLFxuICAgIGludGVudDogKChzY29yZSAmJiBzY29yZSA8IDAuNykgfHwgaW50ZW50ID09PSAnTm9uZScpXG4gICAgICA/ICdOb3RTdXJlJ1xuICAgICAgOiBpbnRlbnQsXG4gICAgZW50aXRpZXMsXG4gICAgcXVlcnlcbiAgfTtcbn07XG5cbi8qKlxuICogIDpTdHJpbmcgLT4gUHJvbWlzZTx7XG4gKiAgICBpbnRlbnQ6IFN0cmluZyxcbiAqICAgIGVudGl0aWVzOiBBcnJheVthbnldLFxuICogICAgcXVlcnk6IFN0cmluZyxcbiAqICB9PlxuICpcbiAqL1xuZXhwb3J0IGRlZmF1bHQgY29udGVudCA9PlxuICBhc2tMdWlzKGNvbnRlbnQpXG4gICAgLnRoZW4oZXZhbHVhdGVSZXNwb25zZSlcbiAgICAuY2F0Y2goaGFuZGxlTmxwRXJyb3IpOyJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "handleNlpError",
+        "err",
+        "console",
+        "error",
+        "evaluateResponse",
+        "response",
+        "query",
+        "topScoringIntent",
+        "entities",
+        "intent",
+        "score",
+        "type",
+        "content",
+        "then",
+        "catch"
+      ],
+      "mappings": ";;;;;;;AAAA;;;;;;AAEO,MAAMA,0CAAiBC,OAAOC,QAAQC,KAAR,CAAcF,GAAd,CAA9B;;AAEP,SAASG,gBAAT,CAA0BC,QAA1B,EAAmC;AACjC,QAAM,EAAEC,KAAF,EAASC,gBAAT,EAA2BC,QAA3B,KAAyCH,QAA/C;AACA,QAAM,EAAEI,MAAF,EAAUC,KAAV,KAAoBH,oBAAoB,EAA9C;;AAEA,SAAO;AACLI,UAAM,UADD;AAELF,YAAUC,SAASA,QAAQ,GAAlB,IAA0BD,WAAW,MAAtC,GACJ,SADI,GAEJA,MAJC;AAKLD,YALK;AAMLF;AANK,GAAP;AAQD;;AAED;;;;;;;;;kBAQeM,WACb,oBAAQA,OAAR,EACGC,IADH,CACQT,gBADR,EAEGU,KAFH,CAESd,cAFT,C",
+      "file": "index.js",
+      "sourceRoot": "/app/nlp",
+      "sourcesContent": [
+        "import askLuis from './luis.js';\n\nexport const handleNlpError = err => console.error(err);\n\nfunction evaluateResponse(response){\n  const { query, topScoringIntent, entities  } = response;\n  const { intent, score } = topScoringIntent || {};\n\n  return {\n    type: 'not-sure',\n    intent: ((score && score < 0.7) || intent === 'None')\n      ? 'NotSure'\n      : intent,\n    entities,\n    query\n  };\n};\n\n/**\n *  :String -> Promise<{\n *    intent: String,\n *    entities: Array[any],\n *    query: String,\n *  }>\n *\n */\nexport default content =>\n  askLuis(content)\n    .then(evaluateResponse)\n    .catch(handleNlpError);"
+      ]
+    },
+    "mtime": 1519924271944
+  },
+  "{\"filename\":\"/app/nlp/luis.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/nlp\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "extends",
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "request-promise-native",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "rp"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/nlp/luis.js",
+      "filenameRelative": "/app/nlp/luis.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "luis.js",
+      "sourceFileName": "luis.js",
+      "sourceRoot": "/app/nlp",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/nlp",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "luis"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _requestPromiseNative = require('request-promise-native');\n\nvar _requestPromiseNative2 = _interopRequireDefault(_requestPromiseNative);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst luisUri = `${process.env.LUIS_ENDPOINT}/${process.env.LUIS_APPID}`;\n\nconst baseConfig = {\n  uri: luisUri,\n  qs: { 'subscription-key': process.env.LUIS_SUBSCRIPTION_KEY },\n  headers: { 'User-Agent': 'Request-Promise' },\n  json: true\n};\n\nexports.default = text => {\n  const opts = _extends({}, baseConfig);\n  opts.qs.q = text;\n  return (0, _requestPromiseNative2.default)(opts);\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImx1aXMuanMiXSwibmFtZXMiOlsibHVpc1VyaSIsInByb2Nlc3MiLCJlbnYiLCJMVUlTX0VORFBPSU5UIiwiTFVJU19BUFBJRCIsImJhc2VDb25maWciLCJ1cmkiLCJxcyIsIkxVSVNfU1VCU0NSSVBUSU9OX0tFWSIsImhlYWRlcnMiLCJqc29uIiwidGV4dCIsIm9wdHMiLCJxIl0sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBOzs7Ozs7QUFFQSxNQUFNQSxVQUFXLEdBQUVDLFFBQVFDLEdBQVIsQ0FBWUMsYUFBYyxJQUFHRixRQUFRQyxHQUFSLENBQVlFLFVBQVcsRUFBdkU7O0FBRUEsTUFBTUMsYUFBYTtBQUNqQkMsT0FBS04sT0FEWTtBQUVqQk8sTUFBSSxFQUFFLG9CQUFvQk4sUUFBUUMsR0FBUixDQUFZTSxxQkFBbEMsRUFGYTtBQUdqQkMsV0FBUyxFQUFFLGNBQWMsaUJBQWhCLEVBSFE7QUFJakJDLFFBQU07QUFKVyxDQUFuQjs7a0JBT2VDLFFBQVE7QUFDckIsUUFBTUMsb0JBQVlQLFVBQVosQ0FBTjtBQUNBTyxPQUFLTCxFQUFMLENBQVFNLENBQVIsR0FBWUYsSUFBWjtBQUNBLFNBQU8sb0NBQUdDLElBQUgsQ0FBUDtBQUNELEMiLCJmaWxlIjoibHVpcy5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL25scCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBycCBmcm9tICdyZXF1ZXN0LXByb21pc2UtbmF0aXZlJztcblxuY29uc3QgbHVpc1VyaSA9IGAke3Byb2Nlc3MuZW52LkxVSVNfRU5EUE9JTlR9LyR7cHJvY2Vzcy5lbnYuTFVJU19BUFBJRH1gO1xuXG5jb25zdCBiYXNlQ29uZmlnID0ge1xuICB1cmk6IGx1aXNVcmksXG4gIHFzOiB7ICdzdWJzY3JpcHRpb24ta2V5JzogcHJvY2Vzcy5lbnYuTFVJU19TVUJTQ1JJUFRJT05fS0VZIH0sXG4gIGhlYWRlcnM6IHsgJ1VzZXItQWdlbnQnOiAnUmVxdWVzdC1Qcm9taXNlJyB9LFxuICBqc29uOiB0cnVlXG59O1xuXG5leHBvcnQgZGVmYXVsdCB0ZXh0ID0+IHtcbiAgY29uc3Qgb3B0cyA9IHsgLi4uYmFzZUNvbmZpZyB9O1xuICBvcHRzLnFzLnEgPSB0ZXh0O1xuICByZXR1cm4gcnAob3B0cyk7XG59O1xuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "luis.js"
+      ],
+      "names": [
+        "luisUri",
+        "process",
+        "env",
+        "LUIS_ENDPOINT",
+        "LUIS_APPID",
+        "baseConfig",
+        "uri",
+        "qs",
+        "LUIS_SUBSCRIPTION_KEY",
+        "headers",
+        "json",
+        "text",
+        "opts",
+        "q"
+      ],
+      "mappings": ";;;;;;;;AAAA;;;;;;AAEA,MAAMA,UAAW,GAAEC,QAAQC,GAAR,CAAYC,aAAc,IAAGF,QAAQC,GAAR,CAAYE,UAAW,EAAvE;;AAEA,MAAMC,aAAa;AACjBC,OAAKN,OADY;AAEjBO,MAAI,EAAE,oBAAoBN,QAAQC,GAAR,CAAYM,qBAAlC,EAFa;AAGjBC,WAAS,EAAE,cAAc,iBAAhB,EAHQ;AAIjBC,QAAM;AAJW,CAAnB;;kBAOeC,QAAQ;AACrB,QAAMC,oBAAYP,UAAZ,CAAN;AACAO,OAAKL,EAAL,CAAQM,CAAR,GAAYF,IAAZ;AACA,SAAO,oCAAGC,IAAH,CAAP;AACD,C",
+      "file": "luis.js",
+      "sourceRoot": "/app/nlp",
+      "sourcesContent": [
+        "import rp from 'request-promise-native';\n\nconst luisUri = `${process.env.LUIS_ENDPOINT}/${process.env.LUIS_APPID}`;\n\nconst baseConfig = {\n  uri: luisUri,\n  qs: { 'subscription-key': process.env.LUIS_SUBSCRIPTION_KEY },\n  headers: { 'User-Agent': 'Request-Promise' },\n  json: true\n};\n\nexport default text => {\n  const opts = { ...baseConfig };\n  opts.qs.q = text;\n  return rp(opts);\n};\n"
+      ]
+    },
+    "mtime": 1519924271948
+  },
+  "{\"filename\":\"/app/bot/skills/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "./global",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "global"
+              }
+            ]
+          },
+          {
+            "source": "./lolstats",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "lolstats"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [
+            "skillFinder"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "skillFinder",
+              "exported": "skillFinder"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/index.js",
+      "filenameRelative": "/app/bot/skills/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/bot/skills",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.skillFinder = undefined;\n\nvar _global = require('./global');\n\nvar _global2 = _interopRequireDefault(_global);\n\nvar _lolstats = require('./lolstats');\n\nvar _lolstats2 = _interopRequireDefault(_lolstats);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// Estos son los intentos disponibles:\n//   - lolstats.buildHelp\n//   - global.whatCanYouDo\n//   - global.howDoYouDo\n//   - global.greeting\n//   - None (no disponible aqui, manejado por el default)\n\nconst skillset = {\n  global: _global2.default,\n  lolstats: _lolstats2.default\n};\n\nconst skillFinder = exports.skillFinder = intent => {\n  const [namespace, skill] = intent.split('.');\n  const domain = skillset[namespace];\n  return typeof domain === 'object' ? domain[skill] : null;\n};\n\nexports.default = action => {\n  console.log('Attempting to handle intent: ', action);\n  const { intent } = action;\n  const skill = skillFinder(intent);\n\n  if (!skill) throw new Error(`I don't know how to handle ${intent} user intent`);\n\n  return skill(action);\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbInNraWxsc2V0IiwiZ2xvYmFsIiwibG9sc3RhdHMiLCJza2lsbEZpbmRlciIsImludGVudCIsIm5hbWVzcGFjZSIsInNraWxsIiwic3BsaXQiLCJkb21haW4iLCJhY3Rpb24iLCJjb25zb2xlIiwibG9nIiwiRXJyb3IiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQTs7OztBQUNBOzs7Ozs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUEsTUFBTUEsV0FBVztBQUNmQywwQkFEZTtBQUVmQztBQUZlLENBQWpCOztBQUtPLE1BQU1DLG9DQUFjQyxVQUFVO0FBQ25DLFFBQU0sQ0FBRUMsU0FBRixFQUFhQyxLQUFiLElBQXVCRixPQUFPRyxLQUFQLENBQWEsR0FBYixDQUE3QjtBQUNBLFFBQU1DLFNBQVNSLFNBQVNLLFNBQVQsQ0FBZjtBQUNBLFNBQU8sT0FBT0csTUFBUCxLQUFrQixRQUFsQixHQUE2QkEsT0FBT0YsS0FBUCxDQUE3QixHQUE2QyxJQUFwRDtBQUNELENBSk07O2tCQU1RRyxVQUFVO0FBQ3ZCQyxVQUFRQyxHQUFSLENBQVksK0JBQVosRUFBNkNGLE1BQTdDO0FBQ0EsUUFBTSxFQUFFTCxNQUFGLEtBQWFLLE1BQW5CO0FBQ0EsUUFBTUgsUUFBUUgsWUFBWUMsTUFBWixDQUFkOztBQUVBLE1BQUksQ0FBQ0UsS0FBTCxFQUFZLE1BQU0sSUFBSU0sS0FBSixDQUFXLDhCQUE2QlIsTUFBTyxjQUEvQyxDQUFOOztBQUVaLFNBQU9FLE1BQU1HLE1BQU4sQ0FBUDtBQUNELEMiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiL2FwcC9ib3Qvc2tpbGxzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGdsb2JhbCBmcm9tICcuL2dsb2JhbCc7XG5pbXBvcnQgbG9sc3RhdHMgZnJvbSAnLi9sb2xzdGF0cyc7XG5cbi8vIEVzdG9zIHNvbiBsb3MgaW50ZW50b3MgZGlzcG9uaWJsZXM6XG4vLyAgIC0gbG9sc3RhdHMuYnVpbGRIZWxwXG4vLyAgIC0gZ2xvYmFsLndoYXRDYW5Zb3VEb1xuLy8gICAtIGdsb2JhbC5ob3dEb1lvdURvXG4vLyAgIC0gZ2xvYmFsLmdyZWV0aW5nXG4vLyAgIC0gTm9uZSAobm8gZGlzcG9uaWJsZSBhcXVpLCBtYW5lamFkbyBwb3IgZWwgZGVmYXVsdClcblxuY29uc3Qgc2tpbGxzZXQgPSB7XG4gIGdsb2JhbCxcbiAgbG9sc3RhdHMsXG59O1xuXG5leHBvcnQgY29uc3Qgc2tpbGxGaW5kZXIgPSBpbnRlbnQgPT4ge1xuICBjb25zdCBbIG5hbWVzcGFjZSwgc2tpbGwgXSA9IGludGVudC5zcGxpdCgnLicpO1xuICBjb25zdCBkb21haW4gPSBza2lsbHNldFtuYW1lc3BhY2VdO1xuICByZXR1cm4gdHlwZW9mIGRvbWFpbiA9PT0gJ29iamVjdCcgPyBkb21haW5bc2tpbGxdIDogbnVsbDtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IGFjdGlvbiA9PiB7XG4gIGNvbnNvbGUubG9nKCdBdHRlbXB0aW5nIHRvIGhhbmRsZSBpbnRlbnQ6ICcsIGFjdGlvbik7XG4gIGNvbnN0IHsgaW50ZW50IH0gPSBhY3Rpb247XG4gIGNvbnN0IHNraWxsID0gc2tpbGxGaW5kZXIoaW50ZW50KTtcbiAgXG4gIGlmICghc2tpbGwpIHRocm93IG5ldyBFcnJvcihgSSBkb24ndCBrbm93IGhvdyB0byBoYW5kbGUgJHtpbnRlbnR9IHVzZXIgaW50ZW50YCk7XG4gIFxuICByZXR1cm4gc2tpbGwoYWN0aW9uKTtcbn07Il19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "skillset",
+        "global",
+        "lolstats",
+        "skillFinder",
+        "intent",
+        "namespace",
+        "skill",
+        "split",
+        "domain",
+        "action",
+        "console",
+        "log",
+        "Error"
+      ],
+      "mappings": ";;;;;;;AAAA;;;;AACA;;;;;;AAEA;AACA;AACA;AACA;AACA;AACA;;AAEA,MAAMA,WAAW;AACfC,0BADe;AAEfC;AAFe,CAAjB;;AAKO,MAAMC,oCAAcC,UAAU;AACnC,QAAM,CAAEC,SAAF,EAAaC,KAAb,IAAuBF,OAAOG,KAAP,CAAa,GAAb,CAA7B;AACA,QAAMC,SAASR,SAASK,SAAT,CAAf;AACA,SAAO,OAAOG,MAAP,KAAkB,QAAlB,GAA6BA,OAAOF,KAAP,CAA7B,GAA6C,IAApD;AACD,CAJM;;kBAMQG,UAAU;AACvBC,UAAQC,GAAR,CAAY,+BAAZ,EAA6CF,MAA7C;AACA,QAAM,EAAEL,MAAF,KAAaK,MAAnB;AACA,QAAMH,QAAQH,YAAYC,MAAZ,CAAd;;AAEA,MAAI,CAACE,KAAL,EAAY,MAAM,IAAIM,KAAJ,CAAW,8BAA6BR,MAAO,cAA/C,CAAN;;AAEZ,SAAOE,MAAMG,MAAN,CAAP;AACD,C",
+      "file": "index.js",
+      "sourceRoot": "/app/bot/skills",
+      "sourcesContent": [
+        "import global from './global';\nimport lolstats from './lolstats';\n\n// Estos son los intentos disponibles:\n//   - lolstats.buildHelp\n//   - global.whatCanYouDo\n//   - global.howDoYouDo\n//   - global.greeting\n//   - None (no disponible aqui, manejado por el default)\n\nconst skillset = {\n  global,\n  lolstats,\n};\n\nexport const skillFinder = intent => {\n  const [ namespace, skill ] = intent.split('.');\n  const domain = skillset[namespace];\n  return typeof domain === 'object' ? domain[skill] : null;\n};\n\nexport default action => {\n  console.log('Attempting to handle intent: ', action);\n  const { intent } = action;\n  const skill = skillFinder(intent);\n  \n  if (!skill) throw new Error(`I don't know how to handle ${intent} user intent`);\n  \n  return skill(action);\n};"
+      ]
+    },
+    "mtime": 1519924271904
+  },
+  "{\"filename\":\"/app/bot/skills/global/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills/global\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "./howDoYouDo",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "howDoYouDo"
+              }
+            ]
+          },
+          {
+            "source": "./whatCanYouDo",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "whatCanYouDo"
+              }
+            ]
+          },
+          {
+            "source": "./greeting",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "greeting"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/global/index.js",
+      "filenameRelative": "/app/bot/skills/global/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/bot/skills/global",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills/global",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _howDoYouDo = require('./howDoYouDo');\n\nvar _howDoYouDo2 = _interopRequireDefault(_howDoYouDo);\n\nvar _whatCanYouDo = require('./whatCanYouDo');\n\nvar _whatCanYouDo2 = _interopRequireDefault(_whatCanYouDo);\n\nvar _greeting = require('./greeting');\n\nvar _greeting2 = _interopRequireDefault(_greeting);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = {\n  howDoYouDo: _howDoYouDo2.default,\n  whatCanYouDo: _whatCanYouDo2.default,\n  greeting: _greeting2.default\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImhvd0RvWW91RG8iLCJ3aGF0Q2FuWW91RG8iLCJncmVldGluZyJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFDQTs7OztBQUNBOzs7Ozs7a0JBRWU7QUFDYkEsa0NBRGE7QUFFYkMsc0NBRmE7QUFHYkM7QUFIYSxDIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlUm9vdCI6Ii9hcHAvYm90L3NraWxscy9nbG9iYWwiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgaG93RG9Zb3VEbyBmcm9tICcuL2hvd0RvWW91RG8nO1xuaW1wb3J0IHdoYXRDYW5Zb3VEbyBmcm9tICcuL3doYXRDYW5Zb3VEbyc7XG5pbXBvcnQgZ3JlZXRpbmcgZnJvbSAnLi9ncmVldGluZyc7XG5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgaG93RG9Zb3VEbyxcbiAgd2hhdENhbllvdURvLFxuICBncmVldGluZ1xufTsiXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "howDoYouDo",
+        "whatCanYouDo",
+        "greeting"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AACA;;;;;;kBAEe;AACbA,kCADa;AAEbC,sCAFa;AAGbC;AAHa,C",
+      "file": "index.js",
+      "sourceRoot": "/app/bot/skills/global",
+      "sourcesContent": [
+        "import howDoYouDo from './howDoYouDo';\nimport whatCanYouDo from './whatCanYouDo';\nimport greeting from './greeting';\n\nexport default {\n  howDoYouDo,\n  whatCanYouDo,\n  greeting\n};"
+      ]
+    },
+    "mtime": 1519924271892
+  },
+  "{\"filename\":\"/app/bot/skills/global/howDoYouDo.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills/global\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "../../helpers/responseFactories",
+            "imported": [
+              "randomBasicFromArray"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "randomBasicFromArray",
+                "local": "pickFrom"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/global/howDoYouDo.js",
+      "filenameRelative": "/app/bot/skills/global/howDoYouDo.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "howDoYouDo.js",
+      "sourceFileName": "howDoYouDo.js",
+      "sourceRoot": "/app/bot/skills/global",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills/global",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "howDoYouDo"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _responseFactories = require('../../helpers/responseFactories');\n\nconst randomResponses = [`A mi muy bien, gracias`, `Pfft voy 1/10/1, que mas puede salir mal?`, `Espera que me matan bajo torre !`, `Pues para existir en un monton de silicon, puedo decir que me va bastante bien`, `Estoy un poco desvelada, he estado jugando LoL hasta tarde`, `Bien, hoy nos sentimos traviesos ... eh!`, `Pues ando de ñoñ@ como Swain.`, `Pues estaria bueno si el JG me gankeara pero estoy en low ELO`];\n\nexports.default = () => Promise.resolve((0, _responseFactories.randomBasicFromArray)(randomResponses));\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvd0RvWW91RG8uanMiXSwibmFtZXMiOlsicmFuZG9tUmVzcG9uc2VzIiwiUHJvbWlzZSIsInJlc29sdmUiXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBOztBQUVBLE1BQU1BLGtCQUFrQixDQUNyQix3QkFEcUIsRUFFckIsMkNBRnFCLEVBR3JCLGtDQUhxQixFQUlyQixnRkFKcUIsRUFLckIsNERBTHFCLEVBTXJCLDBDQU5xQixFQU9yQiwrQkFQcUIsRUFRckIsK0RBUnFCLENBQXhCOztrQkFXZSxNQUFNQyxRQUFRQyxPQUFSLENBQ25CLDZDQUNFRixlQURGLENBRG1CLEMiLCJmaWxlIjoiaG93RG9Zb3VEby5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL2JvdC9za2lsbHMvZ2xvYmFsIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgcmFuZG9tQmFzaWNGcm9tQXJyYXkgYXMgcGlja0Zyb20gfSBmcm9tICcuLi8uLi9oZWxwZXJzL3Jlc3BvbnNlRmFjdG9yaWVzJztcblxuY29uc3QgcmFuZG9tUmVzcG9uc2VzID0gW1xuICBgQSBtaSBtdXkgYmllbiwgZ3JhY2lhc2AsXG4gIGBQZmZ0IHZveSAxLzEwLzEsIHF1ZSBtYXMgcHVlZGUgc2FsaXIgbWFsP2AsXG4gIGBFc3BlcmEgcXVlIG1lIG1hdGFuIGJham8gdG9ycmUgIWAsXG4gIGBQdWVzIHBhcmEgZXhpc3RpciBlbiB1biBtb250b24gZGUgc2lsaWNvbiwgcHVlZG8gZGVjaXIgcXVlIG1lIHZhIGJhc3RhbnRlIGJpZW5gLFxuICBgRXN0b3kgdW4gcG9jbyBkZXN2ZWxhZGEsIGhlIGVzdGFkbyBqdWdhbmRvIExvTCBoYXN0YSB0YXJkZWAsXG4gIGBCaWVuLCBob3kgbm9zIHNlbnRpbW9zIHRyYXZpZXNvcyAuLi4gZWghYCxcbiAgYFB1ZXMgYW5kbyBkZSDDsW/DsUAgY29tbyBTd2Fpbi5gLFxuICBgUHVlcyBlc3RhcmlhIGJ1ZW5vIHNpIGVsIEpHIG1lIGdhbmtlYXJhIHBlcm8gZXN0b3kgZW4gbG93IEVMT2AsXG5dO1xuXG5leHBvcnQgZGVmYXVsdCAoKSA9PiBQcm9taXNlLnJlc29sdmUoXG4gIHBpY2tGcm9tKFxuICAgIHJhbmRvbVJlc3BvbnNlc1xuICApXG4pOyJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "howDoYouDo.js"
+      ],
+      "names": [
+        "randomResponses",
+        "Promise",
+        "resolve"
+      ],
+      "mappings": ";;;;;;AAAA;;AAEA,MAAMA,kBAAkB,CACrB,wBADqB,EAErB,2CAFqB,EAGrB,kCAHqB,EAIrB,gFAJqB,EAKrB,4DALqB,EAMrB,0CANqB,EAOrB,+BAPqB,EAQrB,+DARqB,CAAxB;;kBAWe,MAAMC,QAAQC,OAAR,CACnB,6CACEF,eADF,CADmB,C",
+      "file": "howDoYouDo.js",
+      "sourceRoot": "/app/bot/skills/global",
+      "sourcesContent": [
+        "import { randomBasicFromArray as pickFrom } from '../../helpers/responseFactories';\n\nconst randomResponses = [\n  `A mi muy bien, gracias`,\n  `Pfft voy 1/10/1, que mas puede salir mal?`,\n  `Espera que me matan bajo torre !`,\n  `Pues para existir en un monton de silicon, puedo decir que me va bastante bien`,\n  `Estoy un poco desvelada, he estado jugando LoL hasta tarde`,\n  `Bien, hoy nos sentimos traviesos ... eh!`,\n  `Pues ando de ñoñ@ como Swain.`,\n  `Pues estaria bueno si el JG me gankeara pero estoy en low ELO`,\n];\n\nexport default () => Promise.resolve(\n  pickFrom(\n    randomResponses\n  )\n);"
+      ]
+    },
+    "mtime": 1519924271884
+  },
+  "{\"filename\":\"/app/bot/helpers/responseFactories.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/helpers\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [
+            "basicTextReply",
+            "basicEmbedReply",
+            "basicRichContentReply",
+            "randomBasicFromArray"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "basicTextReply",
+              "exported": "basicTextReply"
+            },
+            {
+              "kind": "local",
+              "local": "basicEmbedReply",
+              "exported": "basicEmbedReply"
+            },
+            {
+              "kind": "local",
+              "local": "basicRichContentReply",
+              "exported": "basicRichContentReply"
+            },
+            {
+              "kind": "local",
+              "local": "randomBasicFromArray",
+              "exported": "randomBasicFromArray"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/helpers/responseFactories.js",
+      "filenameRelative": "/app/bot/helpers/responseFactories.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "responseFactories.js",
+      "sourceFileName": "responseFactories.js",
+      "sourceRoot": "/app/bot/helpers",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/helpers",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "responseFactories"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nconst basicTextReply = exports.basicTextReply = text => ({ type: 'reply', contentType: 'text', content: text });\n\nconst basicEmbedReply = exports.basicEmbedReply = embed => ({ type: 'reply', contentType: 'embed', content: embed });\nconst basicRichContentReply = exports.basicRichContentReply = content => ({ type: 'reply', contentType: 'rich-content', content });\n\nconst randomBasicFromArray = exports.randomBasicFromArray = replies => basicTextReply(replies[Math.floor(Math.random() * replies.length)]);\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc3BvbnNlRmFjdG9yaWVzLmpzIl0sIm5hbWVzIjpbImJhc2ljVGV4dFJlcGx5IiwidGV4dCIsInR5cGUiLCJjb250ZW50VHlwZSIsImNvbnRlbnQiLCJiYXNpY0VtYmVkUmVwbHkiLCJlbWJlZCIsImJhc2ljUmljaENvbnRlbnRSZXBseSIsInJhbmRvbUJhc2ljRnJvbUFycmF5IiwicmVwbGllcyIsIk1hdGgiLCJmbG9vciIsInJhbmRvbSIsImxlbmd0aCJdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBTyxNQUFNQSwwQ0FBaUJDLFNBQVMsRUFBRUMsTUFBTSxPQUFSLEVBQWlCQyxhQUFhLE1BQTlCLEVBQXNDQyxTQUFTSCxJQUEvQyxFQUFULENBQXZCOztBQUVBLE1BQU1JLDRDQUFrQkMsVUFBVSxFQUFFSixNQUFNLE9BQVIsRUFBaUJDLGFBQWEsT0FBOUIsRUFBdUNDLFNBQVNFLEtBQWhELEVBQVYsQ0FBeEI7QUFDQSxNQUFNQyx3REFBd0JILFlBQVksRUFBRUYsTUFBTSxPQUFSLEVBQWlCQyxhQUFhLGNBQTlCLEVBQThDQyxPQUE5QyxFQUFaLENBQTlCOztBQUVBLE1BQU1JLHNEQUF1QkMsV0FDbENULGVBQWVTLFFBQVFDLEtBQUtDLEtBQUwsQ0FBV0QsS0FBS0UsTUFBTCxLQUFnQkgsUUFBUUksTUFBbkMsQ0FBUixDQUFmLENBREsiLCJmaWxlIjoicmVzcG9uc2VGYWN0b3JpZXMuanMiLCJzb3VyY2VSb290IjoiL2FwcC9ib3QvaGVscGVycyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBiYXNpY1RleHRSZXBseSA9IHRleHQgPT4gKHsgdHlwZTogJ3JlcGx5JywgY29udGVudFR5cGU6ICd0ZXh0JywgY29udGVudDogdGV4dCB9KTtcblxuZXhwb3J0IGNvbnN0IGJhc2ljRW1iZWRSZXBseSA9IGVtYmVkID0+ICh7IHR5cGU6ICdyZXBseScsIGNvbnRlbnRUeXBlOiAnZW1iZWQnLCBjb250ZW50OiBlbWJlZCB9KTtcbmV4cG9ydCBjb25zdCBiYXNpY1JpY2hDb250ZW50UmVwbHkgPSBjb250ZW50ID0+ICh7IHR5cGU6ICdyZXBseScsIGNvbnRlbnRUeXBlOiAncmljaC1jb250ZW50JywgY29udGVudCB9KTtcblxuZXhwb3J0IGNvbnN0IHJhbmRvbUJhc2ljRnJvbUFycmF5ID0gcmVwbGllcyA9PiBcbiAgYmFzaWNUZXh0UmVwbHkocmVwbGllc1tNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiByZXBsaWVzLmxlbmd0aCldKTsiXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "responseFactories.js"
+      ],
+      "names": [
+        "basicTextReply",
+        "text",
+        "type",
+        "contentType",
+        "content",
+        "basicEmbedReply",
+        "embed",
+        "basicRichContentReply",
+        "randomBasicFromArray",
+        "replies",
+        "Math",
+        "floor",
+        "random",
+        "length"
+      ],
+      "mappings": ";;;;;AAAO,MAAMA,0CAAiBC,SAAS,EAAEC,MAAM,OAAR,EAAiBC,aAAa,MAA9B,EAAsCC,SAASH,IAA/C,EAAT,CAAvB;;AAEA,MAAMI,4CAAkBC,UAAU,EAAEJ,MAAM,OAAR,EAAiBC,aAAa,OAA9B,EAAuCC,SAASE,KAAhD,EAAV,CAAxB;AACA,MAAMC,wDAAwBH,YAAY,EAAEF,MAAM,OAAR,EAAiBC,aAAa,cAA9B,EAA8CC,OAA9C,EAAZ,CAA9B;;AAEA,MAAMI,sDAAuBC,WAClCT,eAAeS,QAAQC,KAAKC,KAAL,CAAWD,KAAKE,MAAL,KAAgBH,QAAQI,MAAnC,CAAR,CAAf,CADK",
+      "file": "responseFactories.js",
+      "sourceRoot": "/app/bot/helpers",
+      "sourcesContent": [
+        "export const basicTextReply = text => ({ type: 'reply', contentType: 'text', content: text });\n\nexport const basicEmbedReply = embed => ({ type: 'reply', contentType: 'embed', content: embed });\nexport const basicRichContentReply = content => ({ type: 'reply', contentType: 'rich-content', content });\n\nexport const randomBasicFromArray = replies => \n  basicTextReply(replies[Math.floor(Math.random() * replies.length)]);"
+      ]
+    },
+    "mtime": 1519924271840
+  },
+  "{\"filename\":\"/app/bot/skills/global/whatCanYouDo.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills/global\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/global/whatCanYouDo.js",
+      "filenameRelative": "/app/bot/skills/global/whatCanYouDo.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "whatCanYouDo.js",
+      "sourceFileName": "whatCanYouDo.js",
+      "sourceRoot": "/app/bot/skills/global",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills/global",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "whatCanYouDo"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nexports.default = ({ query }) => Promise.resolve({\n  type: 'response',\n  contentType: 'text',\n  content: 'puedo decir cosas graciosas ... algunas veces'\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndoYXRDYW5Zb3VEby5qcyJdLCJuYW1lcyI6WyJxdWVyeSIsIlByb21pc2UiLCJyZXNvbHZlIiwidHlwZSIsImNvbnRlbnRUeXBlIiwiY29udGVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7O2tCQUFlLENBQUMsRUFBRUEsS0FBRixFQUFELEtBQWVDLFFBQVFDLE9BQVIsQ0FBZ0I7QUFDNUNDLFFBQU0sVUFEc0M7QUFFNUNDLGVBQWEsTUFGK0I7QUFHNUNDLFdBQVM7QUFIbUMsQ0FBaEIsQyIsImZpbGUiOiJ3aGF0Q2FuWW91RG8uanMiLCJzb3VyY2VSb290IjoiL2FwcC9ib3Qvc2tpbGxzL2dsb2JhbCIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0ICh7IHF1ZXJ5IH0pID0+IFByb21pc2UucmVzb2x2ZSh7IFxuICB0eXBlOiAncmVzcG9uc2UnLCBcbiAgY29udGVudFR5cGU6ICd0ZXh0JywgXG4gIGNvbnRlbnQ6ICdwdWVkbyBkZWNpciBjb3NhcyBncmFjaW9zYXMgLi4uIGFsZ3VuYXMgdmVjZXMnIFxufSk7Il19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "whatCanYouDo.js"
+      ],
+      "names": [
+        "query",
+        "Promise",
+        "resolve",
+        "type",
+        "contentType",
+        "content"
+      ],
+      "mappings": ";;;;;;kBAAe,CAAC,EAAEA,KAAF,EAAD,KAAeC,QAAQC,OAAR,CAAgB;AAC5CC,QAAM,UADsC;AAE5CC,eAAa,MAF+B;AAG5CC,WAAS;AAHmC,CAAhB,C",
+      "file": "whatCanYouDo.js",
+      "sourceRoot": "/app/bot/skills/global",
+      "sourcesContent": [
+        "export default ({ query }) => Promise.resolve({ \n  type: 'response', \n  contentType: 'text', \n  content: 'puedo decir cosas graciosas ... algunas veces' \n});"
+      ]
+    },
+    "mtime": 1519924271896
+  },
+  "{\"filename\":\"/app/bot/skills/global/greeting.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills/global\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "../../helpers/responseFactories",
+            "imported": [
+              "randomBasicFromArray"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "randomBasicFromArray",
+                "local": "pickFrom"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/global/greeting.js",
+      "filenameRelative": "/app/bot/skills/global/greeting.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "greeting.js",
+      "sourceFileName": "greeting.js",
+      "sourceRoot": "/app/bot/skills/global",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills/global",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "greeting"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _responseFactories = require('../../helpers/responseFactories');\n\nconst randomResponses = [`Como te va?`, `Que tal!`, `Saludos invocador`, `Hola, creo que tienes lagg :V`, `Bienvenido a la grieta del invocador xd`];\n\nexports.default = () => Promise.resolve((0, _responseFactories.randomBasicFromArray)(randomResponses));\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdyZWV0aW5nLmpzIl0sIm5hbWVzIjpbInJhbmRvbVJlc3BvbnNlcyIsIlByb21pc2UiLCJyZXNvbHZlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTs7QUFFQSxNQUFNQSxrQkFBa0IsQ0FDckIsYUFEcUIsRUFFckIsVUFGcUIsRUFHckIsbUJBSHFCLEVBSXJCLCtCQUpxQixFQUtyQix5Q0FMcUIsQ0FBeEI7O2tCQVFlLE1BQU1DLFFBQVFDLE9BQVIsQ0FBZ0IsNkNBQVNGLGVBQVQsQ0FBaEIsQyIsImZpbGUiOiJncmVldGluZy5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL2JvdC9za2lsbHMvZ2xvYmFsIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgcmFuZG9tQmFzaWNGcm9tQXJyYXkgYXMgcGlja0Zyb20gfSBmcm9tICcuLi8uLi9oZWxwZXJzL3Jlc3BvbnNlRmFjdG9yaWVzJztcblxuY29uc3QgcmFuZG9tUmVzcG9uc2VzID0gW1xuICBgQ29tbyB0ZSB2YT9gLFxuICBgUXVlIHRhbCFgLFxuICBgU2FsdWRvcyBpbnZvY2Fkb3JgLFxuICBgSG9sYSwgY3JlbyBxdWUgdGllbmVzIGxhZ2cgOlZgLFxuICBgQmllbnZlbmlkbyBhIGxhIGdyaWV0YSBkZWwgaW52b2NhZG9yIHhkYFxuXTtcblxuZXhwb3J0IGRlZmF1bHQgKCkgPT4gUHJvbWlzZS5yZXNvbHZlKHBpY2tGcm9tKHJhbmRvbVJlc3BvbnNlcykpO1xuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "greeting.js"
+      ],
+      "names": [
+        "randomResponses",
+        "Promise",
+        "resolve"
+      ],
+      "mappings": ";;;;;;AAAA;;AAEA,MAAMA,kBAAkB,CACrB,aADqB,EAErB,UAFqB,EAGrB,mBAHqB,EAIrB,+BAJqB,EAKrB,yCALqB,CAAxB;;kBAQe,MAAMC,QAAQC,OAAR,CAAgB,6CAASF,eAAT,CAAhB,C",
+      "file": "greeting.js",
+      "sourceRoot": "/app/bot/skills/global",
+      "sourcesContent": [
+        "import { randomBasicFromArray as pickFrom } from '../../helpers/responseFactories';\n\nconst randomResponses = [\n  `Como te va?`,\n  `Que tal!`,\n  `Saludos invocador`,\n  `Hola, creo que tienes lagg :V`,\n  `Bienvenido a la grieta del invocador xd`\n];\n\nexport default () => Promise.resolve(pickFrom(randomResponses));\n"
+      ]
+    },
+    "mtime": 1519924271880
+  },
+  "{\"filename\":\"/app/bot/skills/lolstats/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills/lolstats\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "./buildHelp",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "buildHelp"
+              }
+            ]
+          },
+          {
+            "source": "./rememberMySummoner",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "rememberMySummoner"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/lolstats/index.js",
+      "filenameRelative": "/app/bot/skills/lolstats/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/bot/skills/lolstats",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills/lolstats",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _buildHelp = require('./buildHelp');\n\nvar _buildHelp2 = _interopRequireDefault(_buildHelp);\n\nvar _rememberMySummoner = require('./rememberMySummoner');\n\nvar _rememberMySummoner2 = _interopRequireDefault(_rememberMySummoner);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = {\n  buildHelp: _buildHelp2.default,\n  rememberMySummoner: _rememberMySummoner2.default\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImJ1aWxkSGVscCIsInJlbWVtYmVyTXlTdW1tb25lciJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFDQTs7Ozs7O2tCQUVlO0FBQ2JBLGdDQURhO0FBRWJDO0FBRmEsQyIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL2JvdC9za2lsbHMvbG9sc3RhdHMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgYnVpbGRIZWxwIGZyb20gJy4vYnVpbGRIZWxwJztcbmltcG9ydCByZW1lbWJlck15U3VtbW9uZXIgZnJvbSAnLi9yZW1lbWJlck15U3VtbW9uZXInO1xuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGJ1aWxkSGVscCxcbiAgcmVtZW1iZXJNeVN1bW1vbmVyLFxufTsiXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "buildHelp",
+        "rememberMySummoner"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;;;kBAEe;AACbA,gCADa;AAEbC;AAFa,C",
+      "file": "index.js",
+      "sourceRoot": "/app/bot/skills/lolstats",
+      "sourcesContent": [
+        "import buildHelp from './buildHelp';\nimport rememberMySummoner from './rememberMySummoner';\n\nexport default {\n  buildHelp,\n  rememberMySummoner,\n};"
+      ]
+    },
+    "mtime": 1519924271912
+  },
+  "{\"filename\":\"/app/bot/skills/lolstats/buildHelp.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills/lolstats\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/lolstats/buildHelp.js",
+      "filenameRelative": "/app/bot/skills/lolstats/buildHelp.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "buildHelp.js",
+      "sourceFileName": "buildHelp.js",
+      "sourceRoot": "/app/bot/skills/lolstats",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills/lolstats",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "buildHelp"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nexports.default = ({ query }) => new Promise(r => r({\n  type: 'response',\n  contentType: 'text',\n  content: 'Te hare ganar algo de manos en LoL'\n}));\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJ1aWxkSGVscC5qcyJdLCJuYW1lcyI6WyJxdWVyeSIsIlByb21pc2UiLCJyIiwidHlwZSIsImNvbnRlbnRUeXBlIiwiY29udGVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7O2tCQUFlLENBQUMsRUFBRUEsS0FBRixFQUFELEtBQWUsSUFBSUMsT0FBSixDQUFZQyxLQUFLQSxFQUFFO0FBQy9DQyxRQUFNLFVBRHlDO0FBRS9DQyxlQUFhLE1BRmtDO0FBRy9DQyxXQUFTO0FBSHNDLENBQUYsQ0FBakIsQyIsImZpbGUiOiJidWlsZEhlbHAuanMiLCJzb3VyY2VSb290IjoiL2FwcC9ib3Qvc2tpbGxzL2xvbHN0YXRzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQgKHsgcXVlcnkgfSkgPT4gbmV3IFByb21pc2UociA9PiByKHsgXG4gIHR5cGU6ICdyZXNwb25zZScsIFxuICBjb250ZW50VHlwZTogJ3RleHQnLCBcbiAgY29udGVudDogJ1RlIGhhcmUgZ2FuYXIgYWxnbyBkZSBtYW5vcyBlbiBMb0wnIFxufSkpOyJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "buildHelp.js"
+      ],
+      "names": [
+        "query",
+        "Promise",
+        "r",
+        "type",
+        "contentType",
+        "content"
+      ],
+      "mappings": ";;;;;;kBAAe,CAAC,EAAEA,KAAF,EAAD,KAAe,IAAIC,OAAJ,CAAYC,KAAKA,EAAE;AAC/CC,QAAM,UADyC;AAE/CC,eAAa,MAFkC;AAG/CC,WAAS;AAHsC,CAAF,CAAjB,C",
+      "file": "buildHelp.js",
+      "sourceRoot": "/app/bot/skills/lolstats",
+      "sourcesContent": [
+        "export default ({ query }) => new Promise(r => r({ \n  type: 'response', \n  contentType: 'text', \n  content: 'Te hare ganar algo de manos en LoL' \n}));"
+      ]
+    },
+    "mtime": 1519924271908
+  },
+  "{\"filename\":\"/app/bot/skills/lolstats/rememberMySummoner.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills/lolstats\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "mongoose",
+            "imported": [
+              "Schema"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "Schema",
+                "local": "Schema"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/lolstats/rememberMySummoner.js",
+      "filenameRelative": "/app/bot/skills/lolstats/rememberMySummoner.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "rememberMySummoner.js",
+      "sourceFileName": "rememberMySummoner.js",
+      "sourceRoot": "/app/bot/skills/lolstats",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills/lolstats",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "rememberMySummoner"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _mongoose = require('mongoose');\n\nvar chatter = new _mongoose.Schema({\n  id: Number,\n  accountId: Number,\n  name: String,\n  profileIconId: Number,\n  revisionDate: Number,\n  summonerLevel: Number\n});\n\nvar summoner = new _mongoose.Schema({\n  id: Number,\n  accountId: Number,\n  name: String,\n  profileIconId: Number,\n  revisionDate: Number,\n  summonerLevel: Number\n});\n\nexports.default = async ctx => ctx;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlbWVtYmVyTXlTdW1tb25lci5qcyJdLCJuYW1lcyI6WyJjaGF0dGVyIiwiaWQiLCJOdW1iZXIiLCJhY2NvdW50SWQiLCJuYW1lIiwiU3RyaW5nIiwicHJvZmlsZUljb25JZCIsInJldmlzaW9uRGF0ZSIsInN1bW1vbmVyTGV2ZWwiLCJzdW1tb25lciIsImN0eCJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7O0FBRUEsSUFBSUEsVUFBVSxxQkFBVztBQUN2QkMsTUFBS0MsTUFEa0I7QUFFdkJDLGFBQVdELE1BRlk7QUFHdkJFLFFBQVFDLE1BSGU7QUFJdkJDLGlCQUFlSixNQUpRO0FBS3ZCSyxnQkFBY0wsTUFMUztBQU12Qk0saUJBQWVOO0FBTlEsQ0FBWCxDQUFkOztBQVNBLElBQUlPLFdBQVcscUJBQVc7QUFDeEJSLE1BQUtDLE1BRG1CO0FBRXhCQyxhQUFXRCxNQUZhO0FBR3hCRSxRQUFRQyxNQUhnQjtBQUl4QkMsaUJBQWVKLE1BSlM7QUFLeEJLLGdCQUFjTCxNQUxVO0FBTXhCTSxpQkFBZU47QUFOUyxDQUFYLENBQWY7O2tCQVNlLE1BQU1RLEdBQU4sSUFBYUEsRyIsImZpbGUiOiJyZW1lbWJlck15U3VtbW9uZXIuanMiLCJzb3VyY2VSb290IjoiL2FwcC9ib3Qvc2tpbGxzL2xvbHN0YXRzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgU2NoZW1hIH0gZnJvbSAnbW9uZ29vc2UnO1xuXG52YXIgY2hhdHRlciA9IG5ldyBTY2hlbWEoe1xuICBpZDogIE51bWJlcixcbiAgYWNjb3VudElkOiBOdW1iZXIsXG4gIG5hbWU6ICAgU3RyaW5nLFxuICBwcm9maWxlSWNvbklkOiBOdW1iZXIsXG4gIHJldmlzaW9uRGF0ZTogTnVtYmVyLFxuICBzdW1tb25lckxldmVsOiBOdW1iZXIsXG59KTtcblxudmFyIHN1bW1vbmVyID0gbmV3IFNjaGVtYSh7XG4gIGlkOiAgTnVtYmVyLFxuICBhY2NvdW50SWQ6IE51bWJlcixcbiAgbmFtZTogICBTdHJpbmcsXG4gIHByb2ZpbGVJY29uSWQ6IE51bWJlcixcbiAgcmV2aXNpb25EYXRlOiBOdW1iZXIsXG4gIHN1bW1vbmVyTGV2ZWw6IE51bWJlcixcbn0pO1xuXG5leHBvcnQgZGVmYXVsdCBhc3luYyBjdHggPT4gY3R4OyJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "rememberMySummoner.js"
+      ],
+      "names": [
+        "chatter",
+        "id",
+        "Number",
+        "accountId",
+        "name",
+        "String",
+        "profileIconId",
+        "revisionDate",
+        "summonerLevel",
+        "summoner",
+        "ctx"
+      ],
+      "mappings": ";;;;;;AAAA;;AAEA,IAAIA,UAAU,qBAAW;AACvBC,MAAKC,MADkB;AAEvBC,aAAWD,MAFY;AAGvBE,QAAQC,MAHe;AAIvBC,iBAAeJ,MAJQ;AAKvBK,gBAAcL,MALS;AAMvBM,iBAAeN;AANQ,CAAX,CAAd;;AASA,IAAIO,WAAW,qBAAW;AACxBR,MAAKC,MADmB;AAExBC,aAAWD,MAFa;AAGxBE,QAAQC,MAHgB;AAIxBC,iBAAeJ,MAJS;AAKxBK,gBAAcL,MALU;AAMxBM,iBAAeN;AANS,CAAX,CAAf;;kBASe,MAAMQ,GAAN,IAAaA,G",
+      "file": "rememberMySummoner.js",
+      "sourceRoot": "/app/bot/skills/lolstats",
+      "sourcesContent": [
+        "import { Schema } from 'mongoose';\n\nvar chatter = new Schema({\n  id:  Number,\n  accountId: Number,\n  name:   String,\n  profileIconId: Number,\n  revisionDate: Number,\n  summonerLevel: Number,\n});\n\nvar summoner = new Schema({\n  id:  Number,\n  accountId: Number,\n  name:   String,\n  profileIconId: Number,\n  revisionDate: Number,\n  summonerLevel: Number,\n});\n\nexport default async ctx => ctx;"
+      ]
+    },
+    "mtime": 1519945356268
+  },
+  "{\"filename\":\"/app/bot/skills/staticReplies.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireWildcard"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "../helpers/responseFactories",
+            "imported": [
+              "basicTextReply",
+              "basicEmbedReply"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "basicTextReply",
+                "local": "basicTextReply"
+              },
+              {
+                "kind": "named",
+                "imported": "basicEmbedReply",
+                "local": "basicEmbedReply"
+              }
+            ]
+          },
+          {
+            "source": "./embedBase.json",
+            "imported": [
+              "*"
+            ],
+            "specifiers": [
+              {
+                "kind": "namespace",
+                "local": "embed"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [
+            "getStaticReply"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "getStaticReply",
+              "exported": "getStaticReply"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/staticReplies.js",
+      "filenameRelative": "/app/bot/skills/staticReplies.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "staticReplies.js",
+      "sourceFileName": "staticReplies.js",
+      "sourceRoot": "/app/bot/skills",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "staticReplies"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.getStaticReply = undefined;\n\nvar _responseFactories = require('../helpers/responseFactories');\n\nvar _embedBase = require('./embedBase.json');\n\nvar embed = _interopRequireWildcard(_embedBase);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\n// Esta funcion convierte nuestro texto en un objeto con nuestra respuesta y otros\n// datos utiles\nconst replyThis = _responseFactories.basicTextReply;\n// Esta es la funcion que exportamos y se lee mas o menos asi:\n// Si el 'content' es igual a 'ping' entonces respondeEsto('pong')\n// fijate que solo la primera linea despues del 'export' no tiene\n// los dos puntos ' : ', cuando agregues mas lineas no olvides respetar esto.\nconst getStaticReply = exports.getStaticReply = content => content === 'ping' ? replyThis('pong') : content === 'amo el lol' ? replyThis('yo tambien pero eres manco') : content === 'odio a teemo' ? replyThis('maldito tejón') : content === ':v' ? replyThis('Bv') : content === ':u' ? replyThis('Bv') : content === 'v:' ? replyThis('Bv') : content === 'maldito teemo' ? replyThis('yo tampoco soporto a ese tejón') : content === 'embed test' ? (0, _responseFactories.basicEmbedReply)(embed) : {};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0YXRpY1JlcGxpZXMuanMiXSwibmFtZXMiOlsiZW1iZWQiLCJyZXBseVRoaXMiLCJnZXRTdGF0aWNSZXBseSIsImNvbnRlbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFFQTs7QUFFQTs7SUFBWUEsSzs7OztBQUpaO0FBQ0E7QUFLQSxNQUFNQyw2Q0FBTjtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ08sTUFBTUMsMENBQWlCQyxXQUMxQkEsWUFBWSxNQUFaLEdBQXFCRixVQUFVLE1BQVYsQ0FBckIsR0FDQUUsWUFBWSxZQUFaLEdBQTJCRixVQUFVLDRCQUFWLENBQTNCLEdBQ0FFLFlBQVksY0FBWixHQUE2QkYsVUFBVSxlQUFWLENBQTdCLEdBQ0FFLFlBQVksSUFBWixHQUFtQkYsVUFBVSxJQUFWLENBQW5CLEdBQ0FFLFlBQVksSUFBWixHQUFtQkYsVUFBVSxJQUFWLENBQW5CLEdBQ0FFLFlBQVksSUFBWixHQUFtQkYsVUFBVSxJQUFWLENBQW5CLEdBQ0FFLFlBQVksZUFBWixHQUE4QkYsVUFBVSxnQ0FBVixDQUE5QixHQUNBRSxZQUFZLFlBQVosR0FBMkIsd0NBQWdCSCxLQUFoQixDQUEzQixHQUNBLEVBVEciLCJmaWxlIjoic3RhdGljUmVwbGllcy5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL2JvdC9za2lsbHMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBFc3RhIGZ1bmNpb24gY29udmllcnRlIG51ZXN0cm8gdGV4dG8gZW4gdW4gb2JqZXRvIGNvbiBudWVzdHJhIHJlc3B1ZXN0YSB5IG90cm9zXG4vLyBkYXRvcyB1dGlsZXNcbmltcG9ydCB7IGJhc2ljVGV4dFJlcGx5LCBiYXNpY0VtYmVkUmVwbHkgfSBmcm9tICcuLi9oZWxwZXJzL3Jlc3BvbnNlRmFjdG9yaWVzJztcblxuaW1wb3J0ICogYXMgZW1iZWQgZnJvbSAnLi9lbWJlZEJhc2UuanNvbidcblxuY29uc3QgcmVwbHlUaGlzID0gYmFzaWNUZXh0UmVwbHk7XG4vLyBFc3RhIGVzIGxhIGZ1bmNpb24gcXVlIGV4cG9ydGFtb3MgeSBzZSBsZWUgbWFzIG8gbWVub3MgYXNpOlxuLy8gU2kgZWwgJ2NvbnRlbnQnIGVzIGlndWFsIGEgJ3BpbmcnIGVudG9uY2VzIHJlc3BvbmRlRXN0bygncG9uZycpXG4vLyBmaWphdGUgcXVlIHNvbG8gbGEgcHJpbWVyYSBsaW5lYSBkZXNwdWVzIGRlbCAnZXhwb3J0JyBubyB0aWVuZVxuLy8gbG9zIGRvcyBwdW50b3MgJyA6ICcsIGN1YW5kbyBhZ3JlZ3VlcyBtYXMgbGluZWFzIG5vIG9sdmlkZXMgcmVzcGV0YXIgZXN0by5cbmV4cG9ydCBjb25zdCBnZXRTdGF0aWNSZXBseSA9IGNvbnRlbnQgPT4gXG4gICAgY29udGVudCA9PT0gJ3BpbmcnID8gcmVwbHlUaGlzKCdwb25nJylcbiAgOiBjb250ZW50ID09PSAnYW1vIGVsIGxvbCcgPyByZXBseVRoaXMoJ3lvIHRhbWJpZW4gcGVybyBlcmVzIG1hbmNvJylcbiAgOiBjb250ZW50ID09PSAnb2RpbyBhIHRlZW1vJyA/IHJlcGx5VGhpcygnbWFsZGl0byB0ZWrDs24nKVxuICA6IGNvbnRlbnQgPT09ICc6dicgPyByZXBseVRoaXMoJ0J2JylcbiAgOiBjb250ZW50ID09PSAnOnUnID8gcmVwbHlUaGlzKCdCdicpXG4gIDogY29udGVudCA9PT0gJ3Y6JyA/IHJlcGx5VGhpcygnQnYnKVxuICA6IGNvbnRlbnQgPT09ICdtYWxkaXRvIHRlZW1vJyA/IHJlcGx5VGhpcygneW8gdGFtcG9jbyBzb3BvcnRvIGEgZXNlIHRlasOzbicpXG4gIDogY29udGVudCA9PT0gJ2VtYmVkIHRlc3QnID8gYmFzaWNFbWJlZFJlcGx5KGVtYmVkKVxuICA6IHt9XG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "staticReplies.js"
+      ],
+      "names": [
+        "embed",
+        "replyThis",
+        "getStaticReply",
+        "content"
+      ],
+      "mappings": ";;;;;;;AAEA;;AAEA;;IAAYA,K;;;;AAJZ;AACA;AAKA,MAAMC,6CAAN;AACA;AACA;AACA;AACA;AACO,MAAMC,0CAAiBC,WAC1BA,YAAY,MAAZ,GAAqBF,UAAU,MAAV,CAArB,GACAE,YAAY,YAAZ,GAA2BF,UAAU,4BAAV,CAA3B,GACAE,YAAY,cAAZ,GAA6BF,UAAU,eAAV,CAA7B,GACAE,YAAY,IAAZ,GAAmBF,UAAU,IAAV,CAAnB,GACAE,YAAY,IAAZ,GAAmBF,UAAU,IAAV,CAAnB,GACAE,YAAY,IAAZ,GAAmBF,UAAU,IAAV,CAAnB,GACAE,YAAY,eAAZ,GAA8BF,UAAU,gCAAV,CAA9B,GACAE,YAAY,YAAZ,GAA2B,wCAAgBH,KAAhB,CAA3B,GACA,EATG",
+      "file": "staticReplies.js",
+      "sourceRoot": "/app/bot/skills",
+      "sourcesContent": [
+        "// Esta funcion convierte nuestro texto en un objeto con nuestra respuesta y otros\n// datos utiles\nimport { basicTextReply, basicEmbedReply } from '../helpers/responseFactories';\n\nimport * as embed from './embedBase.json'\n\nconst replyThis = basicTextReply;\n// Esta es la funcion que exportamos y se lee mas o menos asi:\n// Si el 'content' es igual a 'ping' entonces respondeEsto('pong')\n// fijate que solo la primera linea despues del 'export' no tiene\n// los dos puntos ' : ', cuando agregues mas lineas no olvides respetar esto.\nexport const getStaticReply = content => \n    content === 'ping' ? replyThis('pong')\n  : content === 'amo el lol' ? replyThis('yo tambien pero eres manco')\n  : content === 'odio a teemo' ? replyThis('maldito tejón')\n  : content === ':v' ? replyThis('Bv')\n  : content === ':u' ? replyThis('Bv')\n  : content === 'v:' ? replyThis('Bv')\n  : content === 'maldito teemo' ? replyThis('yo tampoco soporto a ese tejón')\n  : content === 'embed test' ? basicEmbedReply(embed)\n  : {}\n"
+      ]
+    },
+    "mtime": 1519924271932
+  },
+  "{\"filename\":\"/app/bot/skills/conversation/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills/conversation\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [
+            "recallConversation",
+            "rememberConversation",
+            "conversationToContext"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "recallConversation",
+              "exported": "recallConversation"
+            },
+            {
+              "kind": "local",
+              "local": "rememberConversation",
+              "exported": "rememberConversation"
+            },
+            {
+              "kind": "local",
+              "local": "conversationToContext",
+              "exported": "conversationToContext"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/conversation/index.js",
+      "filenameRelative": "/app/bot/skills/conversation/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/bot/skills/conversation",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills/conversation",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n\n// export const conversationToContext = ctx => {\n//   return ({ ...ctx, conversation: followConversation(ctx.message) }); \n// }\n\nconst recallConversation = exports.recallConversation = ctx => {};\nconst rememberConversation = exports.rememberConversation = ctx => {};\n\n// const getConversation = authorId => \n//   activeConversations.get(authorId);\n// const rememberConversation = conversation => \n//   activeConversations.set(conversation.authorId, conversation);\n\nconst conversationFactory = msg => ({\n  authorId: msg.author.id,\n  lastSeen: new Date(),\n  messages: [msg.content],\n  isActive: false\n});\n\n// export function followConversation(message) {\n//   const { author } = message;\n\n//   const activeConversation = getConversation(author.id);\n//   const wasActive = Boolean(activeConversation);\n\n//   const conversation = wasActive \n//     ? { \n//         ...activeConversation,\n//         messages: [...activeConversation.messages, message.content],\n//         isActive: wasActive,\n//       }\n//     : conversationFactory(message);\n\n//   rememberConversation(conversation);\n\n//   return conversation;\n// };\n\nconst conversationToContext = exports.conversationToContext = ctx => ctx;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbInJlY2FsbENvbnZlcnNhdGlvbiIsImN0eCIsInJlbWVtYmVyQ29udmVyc2F0aW9uIiwiY29udmVyc2F0aW9uRmFjdG9yeSIsIm1zZyIsImF1dGhvcklkIiwiYXV0aG9yIiwiaWQiLCJsYXN0U2VlbiIsIkRhdGUiLCJtZXNzYWdlcyIsImNvbnRlbnQiLCJpc0FjdGl2ZSIsImNvbnZlcnNhdGlvblRvQ29udGV4dCJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUVBO0FBQ0E7QUFDQTs7QUFFTyxNQUFNQSxrREFBcUJDLE9BQU8sQ0FBRSxDQUFwQztBQUNBLE1BQU1DLHNEQUF1QkQsT0FBTyxDQUFFLENBQXRDOztBQUdQO0FBQ0E7QUFDQTtBQUNBOztBQUVBLE1BQU1FLHNCQUFzQkMsUUFBUTtBQUNsQ0MsWUFBVUQsSUFBSUUsTUFBSixDQUFXQyxFQURhO0FBRWxDQyxZQUFVLElBQUlDLElBQUosRUFGd0I7QUFHbENDLFlBQVUsQ0FBRU4sSUFBSU8sT0FBTixDQUh3QjtBQUlsQ0MsWUFBVTtBQUp3QixDQUFSLENBQTVCOztBQU9BO0FBQ0E7O0FBRUE7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQTs7QUFFQTtBQUNBOztBQUVPLE1BQU1DLHdEQUF3QlosT0FBT0EsR0FBckMiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiL2FwcC9ib3Qvc2tpbGxzL2NvbnZlcnNhdGlvbiIsInNvdXJjZXNDb250ZW50IjpbIlxuXG4vLyBleHBvcnQgY29uc3QgY29udmVyc2F0aW9uVG9Db250ZXh0ID0gY3R4ID0+IHtcbi8vICAgcmV0dXJuICh7IC4uLmN0eCwgY29udmVyc2F0aW9uOiBmb2xsb3dDb252ZXJzYXRpb24oY3R4Lm1lc3NhZ2UpIH0pOyBcbi8vIH1cblxuZXhwb3J0IGNvbnN0IHJlY2FsbENvbnZlcnNhdGlvbiA9IGN0eCA9PiB7fTtcbmV4cG9ydCBjb25zdCByZW1lbWJlckNvbnZlcnNhdGlvbiA9IGN0eCA9PiB7fTtcblxuXG4vLyBjb25zdCBnZXRDb252ZXJzYXRpb24gPSBhdXRob3JJZCA9PiBcbi8vICAgYWN0aXZlQ29udmVyc2F0aW9ucy5nZXQoYXV0aG9ySWQpO1xuLy8gY29uc3QgcmVtZW1iZXJDb252ZXJzYXRpb24gPSBjb252ZXJzYXRpb24gPT4gXG4vLyAgIGFjdGl2ZUNvbnZlcnNhdGlvbnMuc2V0KGNvbnZlcnNhdGlvbi5hdXRob3JJZCwgY29udmVyc2F0aW9uKTtcblxuY29uc3QgY29udmVyc2F0aW9uRmFjdG9yeSA9IG1zZyA9PiAoe1xuICBhdXRob3JJZDogbXNnLmF1dGhvci5pZCxcbiAgbGFzdFNlZW46IG5ldyBEYXRlKCksXG4gIG1lc3NhZ2VzOiBbIG1zZy5jb250ZW50IF0sXG4gIGlzQWN0aXZlOiBmYWxzZSxcbn0pO1xuXG4vLyBleHBvcnQgZnVuY3Rpb24gZm9sbG93Q29udmVyc2F0aW9uKG1lc3NhZ2UpIHtcbi8vICAgY29uc3QgeyBhdXRob3IgfSA9IG1lc3NhZ2U7XG4gIFxuLy8gICBjb25zdCBhY3RpdmVDb252ZXJzYXRpb24gPSBnZXRDb252ZXJzYXRpb24oYXV0aG9yLmlkKTtcbi8vICAgY29uc3Qgd2FzQWN0aXZlID0gQm9vbGVhbihhY3RpdmVDb252ZXJzYXRpb24pO1xuICBcbi8vICAgY29uc3QgY29udmVyc2F0aW9uID0gd2FzQWN0aXZlIFxuLy8gICAgID8geyBcbi8vICAgICAgICAgLi4uYWN0aXZlQ29udmVyc2F0aW9uLFxuLy8gICAgICAgICBtZXNzYWdlczogWy4uLmFjdGl2ZUNvbnZlcnNhdGlvbi5tZXNzYWdlcywgbWVzc2FnZS5jb250ZW50XSxcbi8vICAgICAgICAgaXNBY3RpdmU6IHdhc0FjdGl2ZSxcbi8vICAgICAgIH1cbi8vICAgICA6IGNvbnZlcnNhdGlvbkZhY3RvcnkobWVzc2FnZSk7XG4gIFxuLy8gICByZW1lbWJlckNvbnZlcnNhdGlvbihjb252ZXJzYXRpb24pO1xuICBcbi8vICAgcmV0dXJuIGNvbnZlcnNhdGlvbjtcbi8vIH07XG5cbmV4cG9ydCBjb25zdCBjb252ZXJzYXRpb25Ub0NvbnRleHQgPSBjdHggPT4gY3R4O1xuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "recallConversation",
+        "ctx",
+        "rememberConversation",
+        "conversationFactory",
+        "msg",
+        "authorId",
+        "author",
+        "id",
+        "lastSeen",
+        "Date",
+        "messages",
+        "content",
+        "isActive",
+        "conversationToContext"
+      ],
+      "mappings": ";;;;;;;AAEA;AACA;AACA;;AAEO,MAAMA,kDAAqBC,OAAO,CAAE,CAApC;AACA,MAAMC,sDAAuBD,OAAO,CAAE,CAAtC;;AAGP;AACA;AACA;AACA;;AAEA,MAAME,sBAAsBC,QAAQ;AAClCC,YAAUD,IAAIE,MAAJ,CAAWC,EADa;AAElCC,YAAU,IAAIC,IAAJ,EAFwB;AAGlCC,YAAU,CAAEN,IAAIO,OAAN,CAHwB;AAIlCC,YAAU;AAJwB,CAAR,CAA5B;;AAOA;AACA;;AAEA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;;AAEA;AACA;;AAEO,MAAMC,wDAAwBZ,OAAOA,GAArC",
+      "file": "index.js",
+      "sourceRoot": "/app/bot/skills/conversation",
+      "sourcesContent": [
+        "\n\n// export const conversationToContext = ctx => {\n//   return ({ ...ctx, conversation: followConversation(ctx.message) }); \n// }\n\nexport const recallConversation = ctx => {};\nexport const rememberConversation = ctx => {};\n\n\n// const getConversation = authorId => \n//   activeConversations.get(authorId);\n// const rememberConversation = conversation => \n//   activeConversations.set(conversation.authorId, conversation);\n\nconst conversationFactory = msg => ({\n  authorId: msg.author.id,\n  lastSeen: new Date(),\n  messages: [ msg.content ],\n  isActive: false,\n});\n\n// export function followConversation(message) {\n//   const { author } = message;\n  \n//   const activeConversation = getConversation(author.id);\n//   const wasActive = Boolean(activeConversation);\n  \n//   const conversation = wasActive \n//     ? { \n//         ...activeConversation,\n//         messages: [...activeConversation.messages, message.content],\n//         isActive: wasActive,\n//       }\n//     : conversationFactory(message);\n  \n//   rememberConversation(conversation);\n  \n//   return conversation;\n// };\n\nexport const conversationToContext = ctx => ctx;\n"
+      ]
+    },
+    "mtime": 1519924271864
+  },
+  "{\"filename\":\"/app/bot/skills/memory/shortTerm.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/bot/skills/memory\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "extends",
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "node-cache",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "NodeCache"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [
+            "followConversation"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "followConversation",
+              "exported": "followConversation"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/bot/skills/memory/shortTerm.js",
+      "filenameRelative": "/app/bot/skills/memory/shortTerm.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "shortTerm.js",
+      "sourceFileName": "shortTerm.js",
+      "sourceRoot": "/app/bot/skills/memory",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/bot/skills/memory",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "shortTerm"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.followConversation = undefined;\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _nodeCache = require('node-cache');\n\nvar _nodeCache2 = _interopRequireDefault(_nodeCache);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst activeConversations = new _nodeCache2.default({ stdTTL: 5 * 60 });\n\nconst getShortTermMemory = () => {\n  return {\n    activeConversations\n  };\n};\n\nconst getConversation = authorId => activeConversations.get(authorId);\nconst rememberConversation = conversation => activeConversations.set(conversation.authorId, conversation);\n\nconst conversationFactory = msg => ({\n  authorId: msg.author.id,\n  lastSeen: new Date(),\n  messages: [msg.content],\n  isActive: false\n});\n\nconst followConversation = exports.followConversation = message => {\n  const { author } = message;\n\n  const activeConversation = getConversation(author.id);\n  const wasActive = Boolean(activeConversation);\n\n  const conversation = wasActive ? _extends({}, activeConversation, {\n    messages: [...activeConversation.messages, message.content],\n    isActive: wasActive\n  }) : conversationFactory(message);\n\n  rememberConversation(conversation);\n\n  return conversation;\n};\n\nexports.default = getShortTermMemory;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNob3J0VGVybS5qcyJdLCJuYW1lcyI6WyJhY3RpdmVDb252ZXJzYXRpb25zIiwic3RkVFRMIiwiZ2V0U2hvcnRUZXJtTWVtb3J5IiwiZ2V0Q29udmVyc2F0aW9uIiwiYXV0aG9ySWQiLCJnZXQiLCJyZW1lbWJlckNvbnZlcnNhdGlvbiIsImNvbnZlcnNhdGlvbiIsInNldCIsImNvbnZlcnNhdGlvbkZhY3RvcnkiLCJtc2ciLCJhdXRob3IiLCJpZCIsImxhc3RTZWVuIiwiRGF0ZSIsIm1lc3NhZ2VzIiwiY29udGVudCIsImlzQWN0aXZlIiwiZm9sbG93Q29udmVyc2F0aW9uIiwibWVzc2FnZSIsImFjdGl2ZUNvbnZlcnNhdGlvbiIsIndhc0FjdGl2ZSIsIkJvb2xlYW4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUFBOzs7Ozs7QUFFQSxNQUFNQSxzQkFBc0Isd0JBQWMsRUFBRUMsUUFBUSxJQUFJLEVBQWQsRUFBZCxDQUE1Qjs7QUFFQSxNQUFNQyxxQkFBcUIsTUFBTTtBQUMvQixTQUFPO0FBQ0xGO0FBREssR0FBUDtBQUdELENBSkQ7O0FBTUEsTUFBTUcsa0JBQWtCQyxZQUN0Qkosb0JBQW9CSyxHQUFwQixDQUF3QkQsUUFBeEIsQ0FERjtBQUVBLE1BQU1FLHVCQUF1QkMsZ0JBQzNCUCxvQkFBb0JRLEdBQXBCLENBQXdCRCxhQUFhSCxRQUFyQyxFQUErQ0csWUFBL0MsQ0FERjs7QUFHQSxNQUFNRSxzQkFBc0JDLFFBQVE7QUFDbENOLFlBQVVNLElBQUlDLE1BQUosQ0FBV0MsRUFEYTtBQUVsQ0MsWUFBVSxJQUFJQyxJQUFKLEVBRndCO0FBR2xDQyxZQUFVLENBQUVMLElBQUlNLE9BQU4sQ0FId0I7QUFJbENDLFlBQVU7QUFKd0IsQ0FBUixDQUE1Qjs7QUFPTyxNQUFNQyxrREFBcUJDLFdBQVc7QUFDM0MsUUFBTSxFQUFFUixNQUFGLEtBQWFRLE9BQW5COztBQUVBLFFBQU1DLHFCQUFxQmpCLGdCQUFnQlEsT0FBT0MsRUFBdkIsQ0FBM0I7QUFDQSxRQUFNUyxZQUFZQyxRQUFRRixrQkFBUixDQUFsQjs7QUFFQSxRQUFNYixlQUFlYyx5QkFFWkQsa0JBRlk7QUFHZkwsY0FBVSxDQUFDLEdBQUdLLG1CQUFtQkwsUUFBdkIsRUFBaUNJLFFBQVFILE9BQXpDLENBSEs7QUFJZkMsY0FBVUk7QUFKSyxPQU1qQlosb0JBQW9CVSxPQUFwQixDQU5KOztBQVFBYix1QkFBcUJDLFlBQXJCOztBQUVBLFNBQU9BLFlBQVA7QUFDRCxDQWpCTTs7a0JBbUJRTCxrQiIsImZpbGUiOiJzaG9ydFRlcm0uanMiLCJzb3VyY2VSb290IjoiL2FwcC9ib3Qvc2tpbGxzL21lbW9yeSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBOb2RlQ2FjaGUgZnJvbSAnbm9kZS1jYWNoZSc7XG5cbmNvbnN0IGFjdGl2ZUNvbnZlcnNhdGlvbnMgPSBuZXcgTm9kZUNhY2hlKHsgc3RkVFRMOiA1ICogNjAgfSk7XG5cbmNvbnN0IGdldFNob3J0VGVybU1lbW9yeSA9ICgpID0+IHtcbiAgcmV0dXJuIHtcbiAgICBhY3RpdmVDb252ZXJzYXRpb25zXG4gIH07XG59O1xuXG5jb25zdCBnZXRDb252ZXJzYXRpb24gPSBhdXRob3JJZCA9PiBcbiAgYWN0aXZlQ29udmVyc2F0aW9ucy5nZXQoYXV0aG9ySWQpO1xuY29uc3QgcmVtZW1iZXJDb252ZXJzYXRpb24gPSBjb252ZXJzYXRpb24gPT4gXG4gIGFjdGl2ZUNvbnZlcnNhdGlvbnMuc2V0KGNvbnZlcnNhdGlvbi5hdXRob3JJZCwgY29udmVyc2F0aW9uKTtcblxuY29uc3QgY29udmVyc2F0aW9uRmFjdG9yeSA9IG1zZyA9PiAoe1xuICBhdXRob3JJZDogbXNnLmF1dGhvci5pZCxcbiAgbGFzdFNlZW46IG5ldyBEYXRlKCksXG4gIG1lc3NhZ2VzOiBbIG1zZy5jb250ZW50IF0sXG4gIGlzQWN0aXZlOiBmYWxzZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgZm9sbG93Q29udmVyc2F0aW9uID0gbWVzc2FnZSA9PiB7XG4gIGNvbnN0IHsgYXV0aG9yIH0gPSBtZXNzYWdlO1xuICBcbiAgY29uc3QgYWN0aXZlQ29udmVyc2F0aW9uID0gZ2V0Q29udmVyc2F0aW9uKGF1dGhvci5pZCk7XG4gIGNvbnN0IHdhc0FjdGl2ZSA9IEJvb2xlYW4oYWN0aXZlQ29udmVyc2F0aW9uKTtcbiAgXG4gIGNvbnN0IGNvbnZlcnNhdGlvbiA9IHdhc0FjdGl2ZSBcbiAgICA/IHsgXG4gICAgICAgIC4uLmFjdGl2ZUNvbnZlcnNhdGlvbixcbiAgICAgICAgbWVzc2FnZXM6IFsuLi5hY3RpdmVDb252ZXJzYXRpb24ubWVzc2FnZXMsIG1lc3NhZ2UuY29udGVudF0sXG4gICAgICAgIGlzQWN0aXZlOiB3YXNBY3RpdmUsXG4gICAgICB9XG4gICAgOiBjb252ZXJzYXRpb25GYWN0b3J5KG1lc3NhZ2UpO1xuICBcbiAgcmVtZW1iZXJDb252ZXJzYXRpb24oY29udmVyc2F0aW9uKTtcbiAgXG4gIHJldHVybiBjb252ZXJzYXRpb247XG59O1xuXG5leHBvcnQgZGVmYXVsdCBnZXRTaG9ydFRlcm1NZW1vcnk7XG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "shortTerm.js"
+      ],
+      "names": [
+        "activeConversations",
+        "stdTTL",
+        "getShortTermMemory",
+        "getConversation",
+        "authorId",
+        "get",
+        "rememberConversation",
+        "conversation",
+        "set",
+        "conversationFactory",
+        "msg",
+        "author",
+        "id",
+        "lastSeen",
+        "Date",
+        "messages",
+        "content",
+        "isActive",
+        "followConversation",
+        "message",
+        "activeConversation",
+        "wasActive",
+        "Boolean"
+      ],
+      "mappings": ";;;;;;;;;AAAA;;;;;;AAEA,MAAMA,sBAAsB,wBAAc,EAAEC,QAAQ,IAAI,EAAd,EAAd,CAA5B;;AAEA,MAAMC,qBAAqB,MAAM;AAC/B,SAAO;AACLF;AADK,GAAP;AAGD,CAJD;;AAMA,MAAMG,kBAAkBC,YACtBJ,oBAAoBK,GAApB,CAAwBD,QAAxB,CADF;AAEA,MAAME,uBAAuBC,gBAC3BP,oBAAoBQ,GAApB,CAAwBD,aAAaH,QAArC,EAA+CG,YAA/C,CADF;;AAGA,MAAME,sBAAsBC,QAAQ;AAClCN,YAAUM,IAAIC,MAAJ,CAAWC,EADa;AAElCC,YAAU,IAAIC,IAAJ,EAFwB;AAGlCC,YAAU,CAAEL,IAAIM,OAAN,CAHwB;AAIlCC,YAAU;AAJwB,CAAR,CAA5B;;AAOO,MAAMC,kDAAqBC,WAAW;AAC3C,QAAM,EAAER,MAAF,KAAaQ,OAAnB;;AAEA,QAAMC,qBAAqBjB,gBAAgBQ,OAAOC,EAAvB,CAA3B;AACA,QAAMS,YAAYC,QAAQF,kBAAR,CAAlB;;AAEA,QAAMb,eAAec,yBAEZD,kBAFY;AAGfL,cAAU,CAAC,GAAGK,mBAAmBL,QAAvB,EAAiCI,QAAQH,OAAzC,CAHK;AAIfC,cAAUI;AAJK,OAMjBZ,oBAAoBU,OAApB,CANJ;;AAQAb,uBAAqBC,YAArB;;AAEA,SAAOA,YAAP;AACD,CAjBM;;kBAmBQL,kB",
+      "file": "shortTerm.js",
+      "sourceRoot": "/app/bot/skills/memory",
+      "sourcesContent": [
+        "import NodeCache from 'node-cache';\n\nconst activeConversations = new NodeCache({ stdTTL: 5 * 60 });\n\nconst getShortTermMemory = () => {\n  return {\n    activeConversations\n  };\n};\n\nconst getConversation = authorId => \n  activeConversations.get(authorId);\nconst rememberConversation = conversation => \n  activeConversations.set(conversation.authorId, conversation);\n\nconst conversationFactory = msg => ({\n  authorId: msg.author.id,\n  lastSeen: new Date(),\n  messages: [ msg.content ],\n  isActive: false,\n});\n\nexport const followConversation = message => {\n  const { author } = message;\n  \n  const activeConversation = getConversation(author.id);\n  const wasActive = Boolean(activeConversation);\n  \n  const conversation = wasActive \n    ? { \n        ...activeConversation,\n        messages: [...activeConversation.messages, message.content],\n        isActive: wasActive,\n      }\n    : conversationFactory(message);\n  \n  rememberConversation(conversation);\n  \n  return conversation;\n};\n\nexport default getShortTermMemory;\n"
+      ]
+    },
+    "mtime": 1519798358036
+  },
+  "{\"filename\":\"/app/servers/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/servers\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "./web",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "getWebServer"
+              }
+            ]
+          },
+          {
+            "source": "./sockets",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "getSocketsServer"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/servers/index.js",
+      "filenameRelative": "/app/servers/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/servers",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/servers",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _web = require('./web');\n\nvar _web2 = _interopRequireDefault(_web);\n\nvar _sockets = require('./sockets');\n\nvar _sockets2 = _interopRequireDefault(_sockets);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// import getDatabaseConnection from './database';\n\nexports.default = async () => {\n  const webServer = await (0, _web2.default)();\n  const webSocketServer = await (0, _sockets2.default)(webServer);\n  // const databaseConnection = await getDatabaseConnection();\n\n  return {\n    ws: webServer,\n    wss: webSocketServer\n    // db: databaseConnection,\n  };\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbIndlYlNlcnZlciIsIndlYlNvY2tldFNlcnZlciIsIndzIiwid3NzIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTs7OztBQUNBOzs7Ozs7QUFDQTs7a0JBRWUsWUFBWTtBQUN6QixRQUFNQSxZQUFZLE1BQU0sb0JBQXhCO0FBQ0EsUUFBTUMsa0JBQWtCLE1BQU0sdUJBQWlCRCxTQUFqQixDQUE5QjtBQUNBOztBQUVBLFNBQU87QUFDTEUsUUFBSUYsU0FEQztBQUVMRyxTQUFLRjtBQUNMO0FBSEssR0FBUDtBQUtELEMiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiL2FwcC9zZXJ2ZXJzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGdldFdlYlNlcnZlciBmcm9tICcuL3dlYic7XG5pbXBvcnQgZ2V0U29ja2V0c1NlcnZlciBmcm9tICcuL3NvY2tldHMnO1xuLy8gaW1wb3J0IGdldERhdGFiYXNlQ29ubmVjdGlvbiBmcm9tICcuL2RhdGFiYXNlJztcblxuZXhwb3J0IGRlZmF1bHQgYXN5bmMgKCkgPT4ge1xuICBjb25zdCB3ZWJTZXJ2ZXIgPSBhd2FpdCBnZXRXZWJTZXJ2ZXIoKTtcbiAgY29uc3Qgd2ViU29ja2V0U2VydmVyID0gYXdhaXQgZ2V0U29ja2V0c1NlcnZlcih3ZWJTZXJ2ZXIpO1xuICAvLyBjb25zdCBkYXRhYmFzZUNvbm5lY3Rpb24gPSBhd2FpdCBnZXREYXRhYmFzZUNvbm5lY3Rpb24oKTtcbiAgXG4gIHJldHVybiB7XG4gICAgd3M6IHdlYlNlcnZlcixcbiAgICB3c3M6IHdlYlNvY2tldFNlcnZlcixcbiAgICAvLyBkYjogZGF0YWJhc2VDb25uZWN0aW9uLFxuICB9O1xufTtcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "webServer",
+        "webSocketServer",
+        "ws",
+        "wss"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;;;AACA;;kBAEe,YAAY;AACzB,QAAMA,YAAY,MAAM,oBAAxB;AACA,QAAMC,kBAAkB,MAAM,uBAAiBD,SAAjB,CAA9B;AACA;;AAEA,SAAO;AACLE,QAAIF,SADC;AAELG,SAAKF;AACL;AAHK,GAAP;AAKD,C",
+      "file": "index.js",
+      "sourceRoot": "/app/servers",
+      "sourcesContent": [
+        "import getWebServer from './web';\nimport getSocketsServer from './sockets';\n// import getDatabaseConnection from './database';\n\nexport default async () => {\n  const webServer = await getWebServer();\n  const webSocketServer = await getSocketsServer(webServer);\n  // const databaseConnection = await getDatabaseConnection();\n  \n  return {\n    ws: webServer,\n    wss: webSocketServer,\n    // db: databaseConnection,\n  };\n};\n"
+      ]
+    },
+    "mtime": 1519924271976
+  },
+  "{\"filename\":\"/app/servers/web.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/servers\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "http",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "http"
+              }
+            ]
+          },
+          {
+            "source": "morgan",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "morgan"
+              }
+            ]
+          },
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "./utils/glitchKeepalive",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "keepAlive"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [
+            "getApp",
+            "getServer",
+            "runServer"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "getApp",
+              "exported": "getApp"
+            },
+            {
+              "kind": "local",
+              "local": "getServer",
+              "exported": "getServer"
+            },
+            {
+              "kind": "local",
+              "local": "runServer",
+              "exported": "runServer"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/servers/web.js",
+      "filenameRelative": "/app/servers/web.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "web.js",
+      "sourceFileName": "web.js",
+      "sourceRoot": "/app/servers",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/servers",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "web"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.runServer = exports.getServer = exports.getApp = undefined;\n\nvar _http = require('http');\n\nvar _http2 = _interopRequireDefault(_http);\n\nvar _morgan = require('morgan');\n\nvar _morgan2 = _interopRequireDefault(_morgan);\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _glitchKeepalive = require('./utils/glitchKeepalive');\n\nvar _glitchKeepalive2 = _interopRequireDefault(_glitchKeepalive);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// Esta primera funcion configura la aplicacion de express que va a\n// correr en el servidor http\n// Importamos la libreria con la implementacion de HTTP de Node\n// para poder servir contenido web y express para armar el servidor web\n// morgan es para hacer logs a la consola cuando el servidor procesa una peticion\nconst getApp = exports.getApp = () => new Promise((resolve, reject) => {\n  try {\n    const app = (0, _express2.default)();\n\n    // esta ruta esta aqui para mantener vivo el server con un keepalive\n    app.get('/its-alive', (req, res) => res.json({ isAlive: true }));\n\n    // Aqui va la configuracion del servidor\n\n    // Esto habilita el log a la consola cuando estamos en modo development.\n    if (process.env.NODE_ENV === 'development') app.use((0, _morgan2.default)('tiny'));\n\n    // Aqui se pueden agregar mas rutas\n    // ...\n    app.get('/*', _express2.default.static('static'));\n\n    resolve(app);\n  } catch (err) {\n    reject(err);\n  }\n});\n\n// Esta function crea un servidor http\n\n\n// Esto es para mantener vivo el proceso cuando usamos Glitch\nconst getServer = exports.getServer = app => Promise.resolve(_http2.default.createServer(app));\n\n// Esta funcion corre el servidor web\nconst runServer = exports.runServer = ({ PORT }) => server => {\n  server.listen(PORT, () => console.log(`Express server running on port ${PORT}`));\n  (0, _glitchKeepalive2.default)();\n  return server;\n};\n\n// Esta es la funcion que vamos a exportar y que se encarga de \n// correr las otras tres funciones en orden.\n\nexports.default = () => getApp().then(getServer).then(runServer(process.env));\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYi5qcyJdLCJuYW1lcyI6WyJnZXRBcHAiLCJQcm9taXNlIiwicmVzb2x2ZSIsInJlamVjdCIsImFwcCIsImdldCIsInJlcSIsInJlcyIsImpzb24iLCJpc0FsaXZlIiwicHJvY2VzcyIsImVudiIsIk5PREVfRU5WIiwidXNlIiwic3RhdGljIiwiZXJyIiwiZ2V0U2VydmVyIiwiY3JlYXRlU2VydmVyIiwicnVuU2VydmVyIiwiUE9SVCIsInNlcnZlciIsImxpc3RlbiIsImNvbnNvbGUiLCJsb2ciLCJ0aGVuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBR0E7Ozs7QUFDQTs7OztBQUNBOzs7O0FBR0E7Ozs7OztBQUVBO0FBQ0E7QUFYQTtBQUNBO0FBQ0E7QUFVTyxNQUFNQSwwQkFBUyxNQUFNLElBQUlDLE9BQUosQ0FBWSxDQUFDQyxPQUFELEVBQVVDLE1BQVYsS0FBcUI7QUFDM0QsTUFBSTtBQUNGLFVBQU1DLE1BQU0sd0JBQVo7O0FBRUE7QUFDQUEsUUFBSUMsR0FBSixDQUFRLFlBQVIsRUFBc0IsQ0FBQ0MsR0FBRCxFQUFNQyxHQUFOLEtBQWNBLElBQUlDLElBQUosQ0FBUyxFQUFFQyxTQUFTLElBQVgsRUFBVCxDQUFwQzs7QUFFQTs7QUFFQTtBQUNBLFFBQUlDLFFBQVFDLEdBQVIsQ0FBWUMsUUFBWixLQUF5QixhQUE3QixFQUE0Q1IsSUFBSVMsR0FBSixDQUFRLHNCQUFPLE1BQVAsQ0FBUjs7QUFFNUM7QUFDQTtBQUNBVCxRQUFJQyxHQUFKLENBQVEsSUFBUixFQUFjLGtCQUFRUyxNQUFSLENBQWUsUUFBZixDQUFkOztBQUVBWixZQUFRRSxHQUFSO0FBQ0QsR0FoQkQsQ0FnQkUsT0FBT1csR0FBUCxFQUFZO0FBQ1paLFdBQU9ZLEdBQVA7QUFDRDtBQUVGLENBckIyQixDQUFyQjs7QUF1QlA7OztBQTVCQTtBQTZCTyxNQUFNQyxnQ0FBYVosR0FBRCxJQUN2QkgsUUFBUUMsT0FBUixDQUFnQixlQUFLZSxZQUFMLENBQWtCYixHQUFsQixDQUFoQixDQURLOztBQUdQO0FBQ08sTUFBTWMsZ0NBQVksQ0FBQyxFQUFFQyxJQUFGLEVBQUQsS0FDdkJDLFVBQVU7QUFDUkEsU0FBT0MsTUFBUCxDQUFjRixJQUFkLEVBQW9CLE1BQU1HLFFBQVFDLEdBQVIsQ0FBYSxrQ0FBaUNKLElBQUssRUFBbkQsQ0FBMUI7QUFDQTtBQUNBLFNBQU9DLE1BQVA7QUFDRCxDQUxJOztBQU9QO0FBQ0E7O2tCQUNlLE1BQU1wQixTQUNsQndCLElBRGtCLENBQ2JSLFNBRGEsRUFFbEJRLElBRmtCLENBRWJOLFVBQVVSLFFBQVFDLEdBQWxCLENBRmEsQyIsImZpbGUiOiJ3ZWIuanMiLCJzb3VyY2VSb290IjoiL2FwcC9zZXJ2ZXJzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gSW1wb3J0YW1vcyBsYSBsaWJyZXJpYSBjb24gbGEgaW1wbGVtZW50YWNpb24gZGUgSFRUUCBkZSBOb2RlXG4vLyBwYXJhIHBvZGVyIHNlcnZpciBjb250ZW5pZG8gd2ViIHkgZXhwcmVzcyBwYXJhIGFybWFyIGVsIHNlcnZpZG9yIHdlYlxuLy8gbW9yZ2FuIGVzIHBhcmEgaGFjZXIgbG9ncyBhIGxhIGNvbnNvbGEgY3VhbmRvIGVsIHNlcnZpZG9yIHByb2Nlc2EgdW5hIHBldGljaW9uXG5pbXBvcnQgaHR0cCBmcm9tICdodHRwJztcbmltcG9ydCBtb3JnYW4gZnJvbSAnbW9yZ2FuJztcbmltcG9ydCBleHByZXNzIGZyb20gJ2V4cHJlc3MnO1xuXG4vLyBFc3RvIGVzIHBhcmEgbWFudGVuZXIgdml2byBlbCBwcm9jZXNvIGN1YW5kbyB1c2Ftb3MgR2xpdGNoXG5pbXBvcnQga2VlcEFsaXZlIGZyb20gJy4vdXRpbHMvZ2xpdGNoS2VlcGFsaXZlJztcblxuLy8gRXN0YSBwcmltZXJhIGZ1bmNpb24gY29uZmlndXJhIGxhIGFwbGljYWNpb24gZGUgZXhwcmVzcyBxdWUgdmEgYVxuLy8gY29ycmVyIGVuIGVsIHNlcnZpZG9yIGh0dHBcbmV4cG9ydCBjb25zdCBnZXRBcHAgPSAoKSA9PiBuZXcgUHJvbWlzZSgocmVzb2x2ZSwgcmVqZWN0KSA9PiB7XG4gIHRyeSB7IFxuICAgIGNvbnN0IGFwcCA9IGV4cHJlc3MoKTtcbiAgICBcbiAgICAvLyBlc3RhIHJ1dGEgZXN0YSBhcXVpIHBhcmEgbWFudGVuZXIgdml2byBlbCBzZXJ2ZXIgY29uIHVuIGtlZXBhbGl2ZVxuICAgIGFwcC5nZXQoJy9pdHMtYWxpdmUnLCAocmVxLCByZXMpID0+IHJlcy5qc29uKHsgaXNBbGl2ZTogdHJ1ZSB9KSk7IFxuICAgIFxuICAgIC8vIEFxdWkgdmEgbGEgY29uZmlndXJhY2lvbiBkZWwgc2Vydmlkb3JcblxuICAgIC8vIEVzdG8gaGFiaWxpdGEgZWwgbG9nIGEgbGEgY29uc29sYSBjdWFuZG8gZXN0YW1vcyBlbiBtb2RvIGRldmVsb3BtZW50LlxuICAgIGlmIChwcm9jZXNzLmVudi5OT0RFX0VOViA9PT0gJ2RldmVsb3BtZW50JykgYXBwLnVzZShtb3JnYW4oJ3RpbnknKSk7XG5cbiAgICAvLyBBcXVpIHNlIHB1ZWRlbiBhZ3JlZ2FyIG1hcyBydXRhc1xuICAgIC8vIC4uLlxuICAgIGFwcC5nZXQoJy8qJywgZXhwcmVzcy5zdGF0aWMoJ3N0YXRpYycpKTtcblxuICAgIHJlc29sdmUoYXBwKTtcbiAgfSBjYXRjaCAoZXJyKSB7XG4gICAgcmVqZWN0KGVycik7XG4gIH1cbiAgXG59KTtcblxuLy8gRXN0YSBmdW5jdGlvbiBjcmVhIHVuIHNlcnZpZG9yIGh0dHBcbmV4cG9ydCBjb25zdCBnZXRTZXJ2ZXIgPSAoYXBwKSA9PlxuICBQcm9taXNlLnJlc29sdmUoaHR0cC5jcmVhdGVTZXJ2ZXIoYXBwKSk7XG5cbi8vIEVzdGEgZnVuY2lvbiBjb3JyZSBlbCBzZXJ2aWRvciB3ZWJcbmV4cG9ydCBjb25zdCBydW5TZXJ2ZXIgPSAoeyBQT1JUIH0pID0+IFxuICBzZXJ2ZXIgPT4ge1xuICAgIHNlcnZlci5saXN0ZW4oUE9SVCwgKCkgPT4gY29uc29sZS5sb2coYEV4cHJlc3Mgc2VydmVyIHJ1bm5pbmcgb24gcG9ydCAke1BPUlR9YCkpO1xuICAgIGtlZXBBbGl2ZSgpO1xuICAgIHJldHVybiBzZXJ2ZXI7XG4gIH07XG5cbi8vIEVzdGEgZXMgbGEgZnVuY2lvbiBxdWUgdmFtb3MgYSBleHBvcnRhciB5IHF1ZSBzZSBlbmNhcmdhIGRlIFxuLy8gY29ycmVyIGxhcyBvdHJhcyB0cmVzIGZ1bmNpb25lcyBlbiBvcmRlbi5cbmV4cG9ydCBkZWZhdWx0ICgpID0+IGdldEFwcCgpXG4gIC50aGVuKGdldFNlcnZlcilcbiAgLnRoZW4ocnVuU2VydmVyKHByb2Nlc3MuZW52KSk7XG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "web.js"
+      ],
+      "names": [
+        "getApp",
+        "Promise",
+        "resolve",
+        "reject",
+        "app",
+        "get",
+        "req",
+        "res",
+        "json",
+        "isAlive",
+        "process",
+        "env",
+        "NODE_ENV",
+        "use",
+        "static",
+        "err",
+        "getServer",
+        "createServer",
+        "runServer",
+        "PORT",
+        "server",
+        "listen",
+        "console",
+        "log",
+        "then"
+      ],
+      "mappings": ";;;;;;;AAGA;;;;AACA;;;;AACA;;;;AAGA;;;;;;AAEA;AACA;AAXA;AACA;AACA;AAUO,MAAMA,0BAAS,MAAM,IAAIC,OAAJ,CAAY,CAACC,OAAD,EAAUC,MAAV,KAAqB;AAC3D,MAAI;AACF,UAAMC,MAAM,wBAAZ;;AAEA;AACAA,QAAIC,GAAJ,CAAQ,YAAR,EAAsB,CAACC,GAAD,EAAMC,GAAN,KAAcA,IAAIC,IAAJ,CAAS,EAAEC,SAAS,IAAX,EAAT,CAApC;;AAEA;;AAEA;AACA,QAAIC,QAAQC,GAAR,CAAYC,QAAZ,KAAyB,aAA7B,EAA4CR,IAAIS,GAAJ,CAAQ,sBAAO,MAAP,CAAR;;AAE5C;AACA;AACAT,QAAIC,GAAJ,CAAQ,IAAR,EAAc,kBAAQS,MAAR,CAAe,QAAf,CAAd;;AAEAZ,YAAQE,GAAR;AACD,GAhBD,CAgBE,OAAOW,GAAP,EAAY;AACZZ,WAAOY,GAAP;AACD;AAEF,CArB2B,CAArB;;AAuBP;;;AA5BA;AA6BO,MAAMC,gCAAaZ,GAAD,IACvBH,QAAQC,OAAR,CAAgB,eAAKe,YAAL,CAAkBb,GAAlB,CAAhB,CADK;;AAGP;AACO,MAAMc,gCAAY,CAAC,EAAEC,IAAF,EAAD,KACvBC,UAAU;AACRA,SAAOC,MAAP,CAAcF,IAAd,EAAoB,MAAMG,QAAQC,GAAR,CAAa,kCAAiCJ,IAAK,EAAnD,CAA1B;AACA;AACA,SAAOC,MAAP;AACD,CALI;;AAOP;AACA;;kBACe,MAAMpB,SAClBwB,IADkB,CACbR,SADa,EAElBQ,IAFkB,CAEbN,UAAUR,QAAQC,GAAlB,CAFa,C",
+      "file": "web.js",
+      "sourceRoot": "/app/servers",
+      "sourcesContent": [
+        "// Importamos la libreria con la implementacion de HTTP de Node\n// para poder servir contenido web y express para armar el servidor web\n// morgan es para hacer logs a la consola cuando el servidor procesa una peticion\nimport http from 'http';\nimport morgan from 'morgan';\nimport express from 'express';\n\n// Esto es para mantener vivo el proceso cuando usamos Glitch\nimport keepAlive from './utils/glitchKeepalive';\n\n// Esta primera funcion configura la aplicacion de express que va a\n// correr en el servidor http\nexport const getApp = () => new Promise((resolve, reject) => {\n  try { \n    const app = express();\n    \n    // esta ruta esta aqui para mantener vivo el server con un keepalive\n    app.get('/its-alive', (req, res) => res.json({ isAlive: true })); \n    \n    // Aqui va la configuracion del servidor\n\n    // Esto habilita el log a la consola cuando estamos en modo development.\n    if (process.env.NODE_ENV === 'development') app.use(morgan('tiny'));\n\n    // Aqui se pueden agregar mas rutas\n    // ...\n    app.get('/*', express.static('static'));\n\n    resolve(app);\n  } catch (err) {\n    reject(err);\n  }\n  \n});\n\n// Esta function crea un servidor http\nexport const getServer = (app) =>\n  Promise.resolve(http.createServer(app));\n\n// Esta funcion corre el servidor web\nexport const runServer = ({ PORT }) => \n  server => {\n    server.listen(PORT, () => console.log(`Express server running on port ${PORT}`));\n    keepAlive();\n    return server;\n  };\n\n// Esta es la funcion que vamos a exportar y que se encarga de \n// correr las otras tres funciones en orden.\nexport default () => getApp()\n  .then(getServer)\n  .then(runServer(process.env));\n"
+      ]
+    },
+    "mtime": 1519924271996
+  },
+  "{\"filename\":\"/app/servers/utils/glitchKeepalive.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/servers/utils\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "request",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "request"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/servers/utils/glitchKeepalive.js",
+      "filenameRelative": "/app/servers/utils/glitchKeepalive.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "glitchKeepalive.js",
+      "sourceFileName": "glitchKeepalive.js",
+      "sourceRoot": "/app/servers/utils",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/servers/utils",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "glitchKeepalive"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _request = require('request');\n\nvar _request2 = _interopRequireDefault(_request);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = () => {\n  const reqOpts = { url: 'http://' + process.env.PROJECT_DOMAIN + '.glitch.me/its-alive' };\n  const keepalive = () => (0, _request2.default)(reqOpts, () => setTimeout(() => keepalive(), 55000));\n  // if this is running on Glitch, call self every 55 secs\n  if (process.env.PROJECT_DOMAIN) keepalive();\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdsaXRjaEtlZXBhbGl2ZS5qcyJdLCJuYW1lcyI6WyJyZXFPcHRzIiwidXJsIiwicHJvY2VzcyIsImVudiIsIlBST0pFQ1RfRE9NQUlOIiwia2VlcGFsaXZlIiwic2V0VGltZW91dCJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7OztrQkFFZSxNQUFNO0FBQ25CLFFBQU1BLFVBQVUsRUFBRUMsS0FBSyxZQUFZQyxRQUFRQyxHQUFSLENBQVlDLGNBQXhCLEdBQXlDLHNCQUFoRCxFQUFoQjtBQUNBLFFBQU1DLFlBQVksTUFDaEIsdUJBQ0VMLE9BREYsRUFFRSxNQUFNTSxXQUFXLE1BQU1ELFdBQWpCLEVBQThCLEtBQTlCLENBRlIsQ0FERjtBQUtBO0FBQ0EsTUFBSUgsUUFBUUMsR0FBUixDQUFZQyxjQUFoQixFQUFnQ0M7QUFDakMsQyIsImZpbGUiOiJnbGl0Y2hLZWVwYWxpdmUuanMiLCJzb3VyY2VSb290IjoiL2FwcC9zZXJ2ZXJzL3V0aWxzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHJlcXVlc3QgZnJvbSAncmVxdWVzdCc7XG5cbmV4cG9ydCBkZWZhdWx0ICgpID0+IHtcbiAgY29uc3QgcmVxT3B0cyA9IHsgdXJsOiAnaHR0cDovLycgKyBwcm9jZXNzLmVudi5QUk9KRUNUX0RPTUFJTiArICcuZ2xpdGNoLm1lL2l0cy1hbGl2ZScgfTtcbiAgY29uc3Qga2VlcGFsaXZlID0gKCkgPT5cbiAgICByZXF1ZXN0KFxuICAgICAgcmVxT3B0cyxcbiAgICAgICgpID0+IHNldFRpbWVvdXQoKCkgPT4ga2VlcGFsaXZlKCksIDU1MDAwKVxuICAgICk7XG4gIC8vIGlmIHRoaXMgaXMgcnVubmluZyBvbiBHbGl0Y2gsIGNhbGwgc2VsZiBldmVyeSA1NSBzZWNzXG4gIGlmIChwcm9jZXNzLmVudi5QUk9KRUNUX0RPTUFJTikga2VlcGFsaXZlKCk7XG59Il19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "glitchKeepalive.js"
+      ],
+      "names": [
+        "reqOpts",
+        "url",
+        "process",
+        "env",
+        "PROJECT_DOMAIN",
+        "keepalive",
+        "setTimeout"
+      ],
+      "mappings": ";;;;;;AAAA;;;;;;kBAEe,MAAM;AACnB,QAAMA,UAAU,EAAEC,KAAK,YAAYC,QAAQC,GAAR,CAAYC,cAAxB,GAAyC,sBAAhD,EAAhB;AACA,QAAMC,YAAY,MAChB,uBACEL,OADF,EAEE,MAAMM,WAAW,MAAMD,WAAjB,EAA8B,KAA9B,CAFR,CADF;AAKA;AACA,MAAIH,QAAQC,GAAR,CAAYC,cAAhB,EAAgCC;AACjC,C",
+      "file": "glitchKeepalive.js",
+      "sourceRoot": "/app/servers/utils",
+      "sourcesContent": [
+        "import request from 'request';\n\nexport default () => {\n  const reqOpts = { url: 'http://' + process.env.PROJECT_DOMAIN + '.glitch.me/its-alive' };\n  const keepalive = () =>\n    request(\n      reqOpts,\n      () => setTimeout(() => keepalive(), 55000)\n    );\n  // if this is running on Glitch, call self every 55 secs\n  if (process.env.PROJECT_DOMAIN) keepalive();\n}"
+      ]
+    },
+    "mtime": 1519924271988
+  },
+  "{\"filename\":\"/app/servers/sockets.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],{\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/servers\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "socket.io",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "SocketIo"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [
+            "server"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "server",
+              "exported": "default"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/servers/sockets.js",
+      "filenameRelative": "/app/servers/sockets.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "sockets.js",
+      "sourceFileName": "sockets.js",
+      "sourceRoot": "/app/servers",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/servers",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "sockets"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nexports.default = function (server) {\n  const io = new _socket2.default(server);\n\n  let totalConnections = 0;\n  let liveConnections = 0;\n\n  io.on('connection', socket => {\n    console.log(`new connection: ${socket.id}`);\n    totalConnections += 1;\n    liveConnections += 1;\n    io.sockets.emit('count', { total: totalConnections, live: liveConnections });\n    socket.on('disconnect', reason => {\n      console.log(`${socket.id} disconnected because: ${reason}`);\n      liveConnections -= 1;\n      io.sockets.emit('count', { total: totalConnections, live: liveConnections });\n    });\n  });\n\n  return io;\n};\n\nvar _socket = require('socket.io');\n\nvar _socket2 = _interopRequireDefault(_socket);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNvY2tldHMuanMiXSwibmFtZXMiOlsic2VydmVyIiwiaW8iLCJ0b3RhbENvbm5lY3Rpb25zIiwibGl2ZUNvbm5lY3Rpb25zIiwib24iLCJzb2NrZXQiLCJjb25zb2xlIiwibG9nIiwiaWQiLCJzb2NrZXRzIiwiZW1pdCIsInRvdGFsIiwibGl2ZSIsInJlYXNvbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7O2tCQUNlLFVBQVVBLE1BQVYsRUFBa0I7QUFDL0IsUUFBTUMsS0FBSyxxQkFBYUQsTUFBYixDQUFYOztBQUVBLE1BQUlFLG1CQUFtQixDQUF2QjtBQUNBLE1BQUlDLGtCQUFrQixDQUF0Qjs7QUFFQUYsS0FBR0csRUFBSCxDQUFNLFlBQU4sRUFBb0JDLFVBQVU7QUFDNUJDLFlBQVFDLEdBQVIsQ0FBYSxtQkFBa0JGLE9BQU9HLEVBQUcsRUFBekM7QUFDQU4sd0JBQW9CLENBQXBCO0FBQ0FDLHVCQUFtQixDQUFuQjtBQUNBRixPQUFHUSxPQUFILENBQVdDLElBQVgsQ0FBZ0IsT0FBaEIsRUFBeUIsRUFBQ0MsT0FBT1QsZ0JBQVIsRUFBMEJVLE1BQU1ULGVBQWhDLEVBQXpCO0FBQ0FFLFdBQU9ELEVBQVAsQ0FBVSxZQUFWLEVBQXdCUyxVQUFVO0FBQ2hDUCxjQUFRQyxHQUFSLENBQWEsR0FBRUYsT0FBT0csRUFBRywwQkFBeUJLLE1BQU8sRUFBekQ7QUFDQVYseUJBQW1CLENBQW5CO0FBQ0FGLFNBQUdRLE9BQUgsQ0FBV0MsSUFBWCxDQUFnQixPQUFoQixFQUF5QixFQUFDQyxPQUFPVCxnQkFBUixFQUEwQlUsTUFBTVQsZUFBaEMsRUFBekI7QUFDRCxLQUpEO0FBS0QsR0FWRDs7QUFZQSxTQUFPRixFQUFQO0FBQ0QsQzs7QUFwQkQiLCJmaWxlIjoic29ja2V0cy5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL3NlcnZlcnMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgU29ja2V0SW8gZnJvbSAnc29ja2V0LmlvJztcbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIChzZXJ2ZXIpIHtcbiAgY29uc3QgaW8gPSBuZXcgU29ja2V0SW8oc2VydmVyKTtcblxuICBsZXQgdG90YWxDb25uZWN0aW9ucyA9IDA7XG4gIGxldCBsaXZlQ29ubmVjdGlvbnMgPSAwO1xuXG4gIGlvLm9uKCdjb25uZWN0aW9uJywgc29ja2V0ID0+IHtcbiAgICBjb25zb2xlLmxvZyhgbmV3IGNvbm5lY3Rpb246ICR7c29ja2V0LmlkfWApO1xuICAgIHRvdGFsQ29ubmVjdGlvbnMgKz0gMTtcbiAgICBsaXZlQ29ubmVjdGlvbnMgKz0gMTtcbiAgICBpby5zb2NrZXRzLmVtaXQoJ2NvdW50Jywge3RvdGFsOiB0b3RhbENvbm5lY3Rpb25zLCBsaXZlOiBsaXZlQ29ubmVjdGlvbnN9KTtcbiAgICBzb2NrZXQub24oJ2Rpc2Nvbm5lY3QnLCByZWFzb24gPT4ge1xuICAgICAgY29uc29sZS5sb2coYCR7c29ja2V0LmlkfSBkaXNjb25uZWN0ZWQgYmVjYXVzZTogJHtyZWFzb259YCk7XG4gICAgICBsaXZlQ29ubmVjdGlvbnMgLT0gMTtcbiAgICAgIGlvLnNvY2tldHMuZW1pdCgnY291bnQnLCB7dG90YWw6IHRvdGFsQ29ubmVjdGlvbnMsIGxpdmU6IGxpdmVDb25uZWN0aW9uc30pO1xuICAgIH0pO1xuICB9KTtcbiAgXG4gIHJldHVybiBpbztcbn0iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "sockets.js"
+      ],
+      "names": [
+        "server",
+        "io",
+        "totalConnections",
+        "liveConnections",
+        "on",
+        "socket",
+        "console",
+        "log",
+        "id",
+        "sockets",
+        "emit",
+        "total",
+        "live",
+        "reason"
+      ],
+      "mappings": ";;;;;;kBACe,UAAUA,MAAV,EAAkB;AAC/B,QAAMC,KAAK,qBAAaD,MAAb,CAAX;;AAEA,MAAIE,mBAAmB,CAAvB;AACA,MAAIC,kBAAkB,CAAtB;;AAEAF,KAAGG,EAAH,CAAM,YAAN,EAAoBC,UAAU;AAC5BC,YAAQC,GAAR,CAAa,mBAAkBF,OAAOG,EAAG,EAAzC;AACAN,wBAAoB,CAApB;AACAC,uBAAmB,CAAnB;AACAF,OAAGQ,OAAH,CAAWC,IAAX,CAAgB,OAAhB,EAAyB,EAACC,OAAOT,gBAAR,EAA0BU,MAAMT,eAAhC,EAAzB;AACAE,WAAOD,EAAP,CAAU,YAAV,EAAwBS,UAAU;AAChCP,cAAQC,GAAR,CAAa,GAAEF,OAAOG,EAAG,0BAAyBK,MAAO,EAAzD;AACAV,yBAAmB,CAAnB;AACAF,SAAGQ,OAAH,CAAWC,IAAX,CAAgB,OAAhB,EAAyB,EAACC,OAAOT,gBAAR,EAA0BU,MAAMT,eAAhC,EAAzB;AACD,KAJD;AAKD,GAVD;;AAYA,SAAOF,EAAP;AACD,C;;AApBD",
+      "file": "sockets.js",
+      "sourceRoot": "/app/servers",
+      "sourcesContent": [
+        "import SocketIo from 'socket.io';\nexport default function (server) {\n  const io = new SocketIo(server);\n\n  let totalConnections = 0;\n  let liveConnections = 0;\n\n  io.on('connection', socket => {\n    console.log(`new connection: ${socket.id}`);\n    totalConnections += 1;\n    liveConnections += 1;\n    io.sockets.emit('count', {total: totalConnections, live: liveConnections});\n    socket.on('disconnect', reason => {\n      console.log(`${socket.id} disconnected because: ${reason}`);\n      liveConnections -= 1;\n      io.sockets.emit('count', {total: totalConnections, live: liveConnections});\n    });\n  });\n  \n  return io;\n}"
+      ]
+    },
+    "mtime": 1519924271980
+  }
+}
