@@ -1,42 +1,23 @@
+import { addTopic } from '../memory/shortTerm'
 
-
-// export const conversationToContext = ctx => {
-//   return ({ ...ctx, conversation: followConversation(ctx.message) }); 
-// }
-
-export const recallConversation = ctx => {};
-export const rememberConversation = ctx => {};
-
-
-// const getConversation = authorId => 
-//   activeConversations.get(authorId);
-// const rememberConversation = conversation => 
-//   activeConversations.set(conversation.authorId, conversation);
-
-const conversationFactory = msg => ({
-  authorId: msg.author.id,
+const conversations = addTopic('conversations', { stdTTL: 300 })
+const conversationFactory = input => ({
+  id: input.authorId,
   lastSeen: new Date(),
-  messages: [ msg.content ],
+  messages: [input],
   isActive: false,
-});
+})
 
-// export function followConversation(message) {
-//   const { author } = message;
-  
-//   const activeConversation = getConversation(author.id);
-//   const wasActive = Boolean(activeConversation);
-  
-//   const conversation = wasActive 
-//     ? { 
-//         ...activeConversation,
-//         messages: [...activeConversation.messages, message.content],
-//         isActive: wasActive,
-//       }
-//     : conversationFactory(message);
-  
-//   rememberConversation(conversation);
-  
-//   return conversation;
-// };
+export default function (ctx) {
+  let conversation = conversations.get(ctx.input.authorId)
+  if (conversation) {
+    conversation.messages.push(ctx.input)
+    conversation.isActive = true
+  } else {
+    conversation = conversationFactory(ctx.input)
+  }
+  conversations.set(ctx.input.authorId, conversation)
 
-export const conversationToContext = ctx => ctx;
+  return { ...ctx, conversation }
+}
+

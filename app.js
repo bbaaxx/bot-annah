@@ -1,5 +1,4 @@
-import wakeUpBot from './bot';
-import getServers from './servers';
+import wakeUpBot from './bot'
+import getServers from './servers'
 
-getServers()
-  .then(wakeUpBot);
+getServers().then(wakeUpBot)

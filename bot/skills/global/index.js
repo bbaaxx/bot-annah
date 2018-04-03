@@ -1,9 +1,7 @@
-import howDoYouDo from './howDoYouDo';
-import whatCanYouDo from './whatCanYouDo';
-import greeting from './greeting';
+import whatCanYouDo from './whatCanYouDo'
+import whatIsThat from './whatIsThat'
 
 export default {
-  howDoYouDo,
   whatCanYouDo,
-  greeting
-};
+  whatIsThat,
+}

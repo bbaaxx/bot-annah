@@ -1,10 +1,13 @@
-import NodeCache from 'node-cache';
+import NodeCache from 'node-cache'
 
-const slots = {};
+// this will be mutated
+const topics = {}
 
-const getShortTermMemory = () => slots;
+const getAllTopics = () => topics
 
-const addMemorySlot = (slotId, config = {}) => { slots[slotId] = new NodeCache() };
-const getMemorySlot = slotId => slots.hasOwnProperty(slotId) && slots[slotId];
+export const addTopic = (topicId, options = {}) =>
+  getTopic(topicId) ||
+  Object.assign(topics, { [topicId]: new NodeCache(options) })[topicId]
 
-export default () => slots;
+export const getTopic = topicId =>
+  topics.hasOwnProperty(topicId) && topics[topicId]
