@@ -1,30 +1,21 @@
-import global from './global';
-import lolstats from './lolstats';
-
-// Estos son los intentos disponibles:
-//   - lolstats.buildHelp
-//   - global.whatCanYouDo
-//   - global.howDoYouDo
-//   - global.greeting
-//   - None (no disponible aqui, manejado por el default)
+import lolstats from './lolstats'
 
 const skillset = {
-  global,
   lolstats,
-};
+}
 
-export const skillFinder = intent => {
-  const [ namespace, skill ] = intent.split('.');
-  const domain = skillset[namespace];
-  return typeof domain === 'object' ? domain[skill] : null;
-};
+const skillFinder = intent => {
+  const [namespace, skill] = intent.split('.')
+  const domain = skillset[namespace]
+  return typeof domain === 'object' ? domain[skill] : void 0
+}
 
-export default action => {
-  console.log('Attempting to handle intent: ', action);
-  const { intent } = action;
-  const skill = skillFinder(intent);
-  
-  if (!skill) throw new Error(`I don't know how to handle ${intent} user intent`);
-  
-  return skill(action);
-};
+export default async function(ctx) {
+  const { nlp, handled } = await ctx
+  if (handled) return ctx
+  console.log(ctx)
+  const { intent } = nlp
+  const skill = intent && intent !== '' && skillFinder(intent)
+
+  return skill ? { ...ctx, reaction: await skill(ctx) } : ctx
+}
