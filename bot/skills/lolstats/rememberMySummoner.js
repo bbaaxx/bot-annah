@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose'
+import { Schema } from 'mongoose';
 
 var chatter = new Schema({
   id: Number,
@@ -7,7 +7,7 @@ var chatter = new Schema({
   profileIconId: Number,
   revisionDate: Number,
   summonerLevel: Number,
-})
+});
 
 var summoner = new Schema({
   id: Number,
@@ -16,9 +16,9 @@ var summoner = new Schema({
   profileIconId: Number,
   revisionDate: Number,
   summonerLevel: Number,
-})
+});
 
 export default async ctx => {
-  console.log('yolotzin')
-  return ctx
-}
+  console.log('yolotzin');
+  return ctx;
+};

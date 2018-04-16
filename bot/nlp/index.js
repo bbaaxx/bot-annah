@@ -1,17 +1,17 @@
-import askDf from './dialogflow'
-import { basicTextReply } from '../actions'
+import askDf from './dialogflow';
+import { basicTextReply } from '../actions';
 
 export default async function(ctx) {
-  const { handled, message } = await ctx
-  if (handled) return ctx
-  const nlp = await askDf(ctx.message.content, {
-    sessionId: ctx.message.authorId,
-  })
+  if (ctx.resolved()) return ctx;
+  const nlp = await askDf(ctx.getMessageContent(), {
+    sessionId: ctx.getAuthorId(),
+  });
   const ctxOut = {
     ...ctx,
     nlp,
     handled: nlp.nlpFulfilled,
-  }
-  if (nlp.nlpFulfilled) ctxOut.reaction = basicTextReply(nlp.fulfillment)
-  return ctxOut
+  };
+  ctx.set('nlp', nlp);
+  // if (nlp.nlpFulfilled) ctxOut.reaction = basicTextReply(nlp.fulfillment);
+  return ctxOut;
 }
