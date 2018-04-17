@@ -1,7 +1,5 @@
-import whatCanYouDo from './whatCanYouDo'
-import whatIsThat from './whatIsThat'
+import whatCanYouDo from './whatCanYouDo';
 
 export default {
   whatCanYouDo,
-  whatIsThat,
-}
+};

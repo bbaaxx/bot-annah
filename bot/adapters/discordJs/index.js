@@ -1,44 +1,37 @@
-import Discord from 'discord.js'
-import { Subject } from 'rxjs/Rx'
-import { Observable } from 'rxjs'
-import { zip } from 'rxjs/observable/zip'
-import { merge } from 'rxjs/observable/merge'
-import { fromEvent } from 'rxjs/observable/fromEvent'
+import Discord from 'discord.js';
+import { Subject, Observable } from 'rxjs/Rx';
+import { zip } from 'rxjs/observable/zip';
+import { merge } from 'rxjs/observable/merge';
+import { fromEvent } from 'rxjs/observable/fromEvent';
 
-import { adapterReady, incomingMessage, platformMessage } from './actions'
+import actionHandler from './handlers';
+import { adapterReady, incomingMessage, platformMessage } from './actions';
+import { discardOwnMessages, discardBotMessages } from './messageHelpers';
 
-import handleActions from './handlers'
+const client = new Discord.Client();
 
-const client = new Discord.Client()
-
-const discardOwnMessages = client => message =>
-  Boolean(message.author.id !== client.user.id)
-const discardBotMessages = message => !message.author.bot
-
-const commands$ = new Subject()
-const reactions$ = new Subject()
+const commands$ = new Subject();
+const reactions$ = new Subject();
 
 const platformMessages$ = fromEvent(client, 'message')
   .filter(discardOwnMessages(client))
   .filter(discardBotMessages)
-  .map(platformMessage)
+  .map(platformMessage);
 
-const platformEvents$ = merge(
-  fromEvent(client, 'ready').mapTo({ type: 'adapter-ready' }),
-)
+const platformEvents$ = merge(fromEvent(client, 'ready').map(adapterReady));
 
 const messageLoop$ = zip(
   merge(platformEvents$, platformMessages$),
   reactions$,
   (input, reaction) => ({ ...reaction, input }),
-)
+);
 
 const platformSubscription = merge(messageLoop$, commands$).subscribe(
-  handleActions(client),
-)
+  actionHandler(client),
+);
 
 export default () => ({
   inputs$: merge(platformEvents$, platformMessages$.map(incomingMessage)),
   reactions$,
   commands$,
-})
+});
