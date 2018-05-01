@@ -13,7 +13,7 @@ const noImageResponses = [
 ];
 
 export default async ctx => {
-  const { attachments } = ctx.message;
+  const { attachments } = ctx.getMessage();
   const imageUrl = attachments.first();
 
   if (typeof imageUrl === 'undefined') return pickFrom(noImageResponses);

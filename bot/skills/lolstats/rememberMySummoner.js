@@ -1,17 +1,10 @@
 import { Schema } from 'mongoose';
+import { getSummonerByName } from '../../../lol-api/summoner';
 
-var chatter = new Schema({
+const summoner = new Schema({
+  platformIds: [String],
   id: Number,
-  accountId: Number,
-  name: String,
-  profileIconId: Number,
-  revisionDate: Number,
-  summonerLevel: Number,
-});
-
-var summoner = new Schema({
-  id: Number,
-  accountId: Number,
+  accountId: Number, 
   name: String,
   profileIconId: Number,
   revisionDate: Number,
@@ -19,6 +12,12 @@ var summoner = new Schema({
 });
 
 export default async ctx => {
-  console.log('yolotzin');
-  return ctx;
+  const nlp = ctx.get('nlp');
+  const { summonerName, region } = nlp.parameters;
+  const db = ctx.get('db');
+  const Summoner = db.model('summoner', summoner);
+  
+  const summonerData = await getSummonerByName(summonerName, region);
+  console.log('yolotzin', summonerData);
+  return { type: 'ignore' };
 };

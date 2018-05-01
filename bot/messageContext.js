@@ -1,4 +1,4 @@
-export default (services, platform) => input => {
+export default (services) => input => {
   const { message } = input;
   const { ws, wss, db } = services;
   const ctxMap = new Map(); // eslint-disable-line
@@ -12,8 +12,6 @@ export default (services, platform) => input => {
   ctxMap.set('reaction', void 0);
   
   return {
-    platform,
-    message: input.message,
     // setter & getter
     set: (key, value) => ctxMap.set(key, value),
     get: key => ctxMap.get(key),
@@ -22,15 +20,12 @@ export default (services, platform) => input => {
     getMessage: () => ctxMap.get('message'),
     getMessageContent: () => ctxMap.get('message').content,
     getAuthorId: () => ctxMap.get('message').authorId,
+    getAuthorName: () => ctxMap.get('message').authorName,
     getReaction: () => ctxMap.get('reaction'),
     
     // resolve
     resolve: reaction => ctxMap.set('resolved', true) && ctxMap.set('reaction', reaction),
     resolved: () => ctxMap.get('resolved'),
-    input,
-    services,
     reaction: {},
-    analysis: {},
-    handled: false,
   };
 };

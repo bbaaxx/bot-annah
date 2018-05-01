@@ -1,5 +1,5 @@
 import SocketIo from 'socket.io';
-export default function(server) {
+export default function({ server }) {
   const io = new SocketIo(server);
 
   let totalConnections = 0;

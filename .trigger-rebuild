@@ -1,0 +1,14 @@
+rebuild
+
+(function () { 
+  const wait = t => new Promise(r => setTimeout(r, t));
+  const selFil = application.selectedFile();
+  application
+    .selectedFile(
+      application.files().filter(file => file.path() === ".trigger-rebuild")[0]
+    );
+  wait(500).then( _ => application.editor().replaceRange(
+    "rebuild", { line: 0, ch: 0 }, { line: 0, ch: 10 }
+  ))
+  wait(100).then(application.selectedFile(selFil));
+})();

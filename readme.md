@@ -5,7 +5,7 @@ I am a companion bot for Discord that will help you suck less at LoL, but I am a
 I am also an experiment to use fancy stuff like machine learning and
 statistical analysis to provide an amazing user experience.
 
-stuff like: `!annah save summoner LAN xXtuGfa2006Xx` baffles me and confuses me, with proper training I can understand and react to things like:
+stuff like: `!annah save summoner LAN xXtuGfa2006Xx` baffles and confuses me, with proper training I can understand and react to things like:
 
 - anna remember my summoner name !
 - botannah my summoner name is SuperProwMaster and I play in LAN, remember that!

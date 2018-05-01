@@ -1,15 +1,18 @@
 const botNameRegExp = new RegExp(process.env.BOT_NAME_REGEXP || 'bot', 'i');
 
 export default function(ctx) {
-  if (ctx.handled) return ctx;
-  const { input, conversation } = ctx;
-
-  const activeConversation = Boolean(conversation && conversation.isActive);
-  const iWasMentioned = botNameRegExp.test(String(input.content).toLowerCase());
+  if (ctx.resolved()) return ctx;
+  const conversation = ctx.get('conversation');
+  
+  const activeConversation = Boolean(conversation) && conversation.isActive;
+  const iWasMentioned = botNameRegExp.test(String(ctx.getMessageContent()).toLowerCase());
 
   const shouldAttend = iWasMentioned || activeConversation;
 
+  if (shouldAttend) {
+    
+  }
   const type = shouldAttend ? 'process-message' : 'ignore';
 
-  return { ...ctx, type, handled: !shouldAttend };
+  return { ...ctx, type };
 }

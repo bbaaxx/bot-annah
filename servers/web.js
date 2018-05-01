@@ -4,6 +4,7 @@
 import http from 'http';
 import morgan from 'morgan';
 import express from 'express';
+import bodyParser from 'body-parser';
 
 // Esto es para mantener vivo el proceso cuando usamos Glitch
 import keepAlive from './utils/glitchKeepalive';
@@ -19,14 +20,15 @@ export const getApp = () =>
 
       // esta ruta esta aqui para mantener vivo el server con un keepalive
       app.get('/its-alive', (req, res) => res.json({ isAlive: true }));
-
+      
+      app.use(bodyParser.json());
+      app.use(bodyParser.urlencoded({ extended: true }));
       // Aqui va la configuracion del servidor
 
       // Esto habilita el log a la consola cuando estamos en modo development.
       // if (process.env.NODE_ENV === 'development') app.use(morgan('tiny'))
 
       // Aqui se pueden agregar mas rutas
-      // ...
       app.get('/*', express.static('static'));
 
       resolve(app);
@@ -41,15 +43,23 @@ export const getServer = app => Promise.resolve(http.createServer(app));
 // Esta funcion corre el servidor web
 export const runServer = ({ PORT }) => server => {
   server.listen(PORT, () =>
-    console.log(`Express server running on port ${PORT}`),
+    console.log(`HTTP server running on port ${PORT}`),
   );
   keepAlive();
   return server;
 };
 
+export const startServer = port => app => {
+  const server = app.listen(port, () =>
+    console.log(`Express server running on port ${port}`),
+  );
+  keepAlive();
+  return { server, app };
+}
+
 // Esta es la funcion que vamos a exportar y que se encarga de
 // correr las otras tres funciones en orden.
 export default () =>
-  getApp()
-    .then(getServer)
-    .then(runServer(process.env));
+  getApp().then(startServer(process.env.PORT))
+    // .then(getServer)
+    // .then(runServer(process.env));
