@@ -8,5 +8,8 @@ export default () =>
     mongoose.connect(MONGO_URI);
 
     db.on('error', err => reject(err));
-    db.once('open', () => resolve(db));
+    db.once('open', () => {
+      console.log('Mongo Database connected');
+      resolve(db);
+    });
   });

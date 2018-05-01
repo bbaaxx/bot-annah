@@ -1,0 +1,49 @@
+[{
+  "serviceRegion": "BR",
+  "servicePlatform": "BR1",
+  "endpoint": "br1.api.riotgames.com"
+}, {
+  "serviceRegion": "EUNE",
+  "servicePlatform": "EUN1",
+  "endpoint": "eun1.api.riotgames.com"
+}, {
+  "serviceRegion": "EUW",
+  "servicePlatform": "EUW1",
+  "endpoint": "euw1.api.riotgames.com"
+}, {
+  "serviceRegion": "JP",
+  "servicePlatform": "JP1",
+  "endpoint": "jp1.api.riotgames.com"
+}, {
+  "serviceRegion": "KR",
+  "servicePlatform": "KR",
+  "endpoint": "kr.api.riotgames.com"
+}, {
+  "serviceRegion": "LAN",
+  "servicePlatform": "LA1",
+  "endpoint": "la1.api.riotgames.com"
+}, {
+  "serviceRegion": "LAS",
+  "servicePlatform": "LA2",
+  "endpoint": "la2.api.riotgames.com"
+}, {
+  "serviceRegion": "NA",
+  "servicePlatform": "NA1",
+  "endpoint": "na1.api.riotgames.com"
+}, {
+  "serviceRegion": "OCE",
+  "servicePlatform": "OC1",
+  "endpoint": "oc1.api.riotgames.com"
+}, {
+  "serviceRegion": "TR",
+  "servicePlatform": "TR1",
+  "endpoint": "tr1.api.riotgames.com"
+}, {
+  "serviceRegion": "RU",
+  "servicePlatform": "RU",
+  "endpoint": "ru.api.riotgames.com"
+}, {
+  "serviceRegion": "PBE",
+  "servicePlatform": "PBE1",
+  "endpoint": "pbe1.api.riotgames.com"
+}]

@@ -5,13 +5,16 @@ import { merge } from 'rxjs/observable/merge';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 
 import actionHandler from './handlers';
-import { adapterReady, incomingMessage, platformMessage } from './actions';
+import { adapterReady, publishMessage, platformMessage } from './actions';
 import { discardOwnMessages, discardBotMessages } from './messageHelpers';
 
 const client = new Discord.Client();
 
 const commands$ = new Subject();
 const reactions$ = new Subject();
+
+// TODO: Let the bot handle the errors
+client.on('error', console.error);
 
 const platformMessages$ = fromEvent(client, 'message')
   .filter(discardOwnMessages(client))
@@ -31,7 +34,7 @@ const platformSubscription = merge(messageLoop$, commands$).subscribe(
 );
 
 export default () => ({
-  inputs$: merge(platformEvents$, platformMessages$.map(incomingMessage)),
+  inputs$: merge(platformEvents$, platformMessages$.map(publishMessage)),
   reactions$,
   commands$,
 });
