@@ -1,59 +1,60 @@
-const logPrefix = 'Adapter[discordJs]:'
+const logPrefix = 'Adapter[discordJs]:';
 
-const wait = t => new Promise(r => setTimeout(r, t))
+const wait = t => new Promise(r => setTimeout(r, t));
 
 const makeMessage = reaction => {
   switch (reaction.contentType) {
     case 'text':
     case 'embed':
-      return reaction.content
+      return reaction.content;
     case 'nlp-response':
-      return reaction.fulfillment
+      return reaction.fulfillment;
     default:
-      return
+      return;
   }
-}
+};
 
 const platformActions = {
-  // action: {
-  //   input: { message: DiscordJs.Message },
-  //   message: { contentType: String, content: (String|Any) }
-  // }
   'default-action'(client, reaction) {
     console.warn(
-      `${logPrefix} I don't know what to do with reaction type: ${reaction.type}`,
-    )
+      `${logPrefix} I don't know what to do with reaction type: ${
+        reaction.type
+      }`,
+    );
   },
   ignore() {
-    return
+    return;
   },
   error(_, reaction) {
-    return console.error(`${logPrefix} I have an error: ${reaction.error}`)
+    console.log('errored Reaction', reaction)
+    return console.error(`${logPrefix} I have an error: ${reaction.error}`);
   },
   'message-reply'(_, reaction) {
-    const { input, message } = reaction
-    const { channel } = input.message
-    channel.startTyping()
-    wait(1000).then(() => channel.send(makeMessage(message)) && channel.stopTyping())
+    const { input, message } = reaction;
+    const { channel } = input.message;
+    channel.startTyping();
+    wait(1000).then(
+      () => channel.send(makeMessage(message)) && channel.stopTyping(),
+    );
   },
   connect(client, reaction) {
-    const { token } = reaction
-    client.login(token)
+    const { token } = reaction;
+    client.login(token);
   },
   'set-presence'(client, reaction) {
-    const { presence } = reaction
-    client.user.setPresence(presence)
+    const { presence } = reaction;
+    client.user.setPresence(presence);
   },
   'adapter-ready'(client, reaction) {
-    console.log(`${logPrefix} logged in as ${client.user.tag}`)
+    console.log(`${logPrefix} logged in as ${client.user.tag}`);
   },
-}
+};
 
 const getAction = actionType =>
   actionType in platformActions
     ? platformActions[actionType]
-    : platformActions['default-action']
+    : platformActions['default-action'];
 
 export default client => action => {
-  getAction(action.type)(client, action)
-}
+  getAction(action.type)(client, action);
+};

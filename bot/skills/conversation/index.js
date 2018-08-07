@@ -1,23 +1,36 @@
-import { addTopic } from '../memory/shortTerm'
+import { addTopic } from '../../memory/shortTerm';
 
-const conversations = addTopic('conversations', { stdTTL: 300 })
+const conversations = addTopic('conversations', { stdTTL: 120 });
 const conversationFactory = input => ({
   id: input.authorId,
   lastSeen: new Date(),
   messages: [input],
   isActive: false,
-})
+});
 
-export default function (ctx) {
-  let conversation = conversations.get(ctx.input.authorId)
+const activate = conversation => () => {
+  const { id } = conversation;
+  conversations.set(id, {...conversation, isActive: true });
+  return conversations.get(id);
+};
+
+const end = ({ id }) => () => conversations.del(id);
+
+export default function(ctx) {
+  const message = ctx.getMessage();
+  let conversation = conversations.get(ctx.getAuthorId());
   if (conversation) {
-    conversation.messages.push(ctx.input)
-    conversation.isActive = true
+    conversation.messages.push(message);
+    conversation.isActive = true;
   } else {
-    conversation = conversationFactory(ctx.input)
+    conversation = conversationFactory(message);
   }
-  conversations.set(ctx.input.authorId, conversation)
-
-  return { ...ctx, conversation }
+  conversations.set(ctx.getAuthorId(), conversation);
+  ctx.set('conversation', conversation);
+  
+  return {
+    ...ctx,
+    activateConversation: activate(conversation),
+    endConversation: end(conversation)
+  };
 }
-
